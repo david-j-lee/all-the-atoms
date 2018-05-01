@@ -1,0 +1,33 @@
+@import "styles/_variables.scss";
+@import "styles/theme.scss";
+@import "styles/types.scss";
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  min-width: 300px;
+}
+
+.brand-name,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.p-table,
+.table-responsive {
+  &::-webkit-scrollbar {
+    height: 7px;
+  }
+}

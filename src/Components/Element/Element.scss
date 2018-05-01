@@ -1,0 +1,77 @@
+@import "styles/_variables.scss";
+
+.element-container {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.element-container .active {
+  opacity: 1;
+}
+
+.element-container .inactive {
+  opacity: 0.25;
+}
+
+.element-body {
+  margin: 1px;
+  padding: 4px;
+  cursor: pointer;
+}
+.element-info {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 1.3;
+}
+
+.popover {
+  border: none !important;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+  td {
+    padding: 5px 0;
+  }
+}
+.popover-header-wrapper {
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius: calc(0.3rem - 1px);
+}
+.popover-header {
+  border-bottom: none !important;
+  background-color: transparent !important;
+}
+
+.atomic-number {
+  text-align: left;
+  font-size: 8pt;
+}
+.symbol {
+  font-size: 12pt;
+  font-weight: bold;
+}
+.atomic-name {
+  font-size: 9pt;
+}
+.atomic-mass {
+  font-size: 9pt;
+}
+
+.popover {
+  /* Have to disable pointer events as fast mouse movement will cause
+    popover to not display on hover */
+  pointer-events: none;
+}
+
+.fa-circle {
+  color: $solid-color;
+}
+.fa-tint {
+  color: $liquid-color;
+}
+.fa-cloud {
+  color: $gas-color;
+}

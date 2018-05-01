@@ -1,0 +1,21 @@
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3.5rem;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 5px;
+  font-size: 9pt;
+  opacity: 0.5;
+
+  .fa-xs {
+    color: #ff5b5b;
+  }
+}

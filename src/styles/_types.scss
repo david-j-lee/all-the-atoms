@@ -1,0 +1,138 @@
+// Text
+.alkali-metal-text,
+.alkali-metals-text {
+  color: $alkali-metals;
+}
+.alkali-earth-metal-text,
+.alkali-earth-metals-text {
+  color: $alkali-earth-metals;
+}
+.transition-metal-text,
+.transition-metals-text {
+  color: $transition-metals;
+}
+.basic-metal-text,
+.basic-metals-text {
+  color: $basic-metal;
+}
+.semimetal-text,
+.semimetals-text {
+  color: $semimetal;
+}
+.nonmetal-text,
+.nonmetals-text {
+  color: $nonmetals;
+}
+.halogen-text,
+.halogens-text {
+  color: $halogen;
+}
+.noble-gas-text,
+.noble-gasses-text {
+  color: $noble-gasses;
+}
+.metalloid-text,
+.metalloids-text {
+  color: $metalloids;
+}
+.lanthanoid-text,
+.lanthanoids-text {
+  color: $lanthanoids;
+}
+.actinoid-text,
+.actinoids-text {
+  color: $actinoids;
+}
+
+// Backgrounds
+.alkali-metal-bg,
+.alkali-metals-bg {
+  background-color: $alkali-metals;
+}
+.alkali-earth-metal-bg,
+.alkali-earth-metals-bg {
+  background-color: $alkali-earth-metals;
+}
+.transition-metal-bg,
+.transition-metals-bg {
+  background-color: $transition-metals;
+}
+.basic-metal-bg,
+.basic-metals-bg {
+  background-color: $basic-metal;
+}
+.semimetal-bg,
+.semimetals-bg {
+  background-color: $semimetal;
+}
+.nonmetal-bg,
+.nonmetals-bg {
+  background-color: $nonmetals;
+}
+.halogen-bg,
+.halogens-bg {
+  background-color: $halogen;
+}
+.noble-gas-bg,
+.noble-gasses-bg {
+  background-color: $noble-gasses;
+}
+.metalloid-bg,
+.metalloids-bg {
+  background-color: $metalloids;
+}
+.lanthanoid-bg,
+.lanthanoids-bg {
+  background-color: $lanthanoids;
+}
+.actinoid-bg,
+.actinoids-bg {
+  background-color: $actinoids;
+}
+
+// Borders
+$border-size: 3px;
+.alkali-metal-border-bottom,
+.alkali-metals-border-bottom {
+  border-bottom: $border-size solid $alkali-metals;
+}
+.alkali-earth-metal-border-bottom,
+.alkali-earth-metals-border-bottom {
+  border-bottom: $border-size solid $alkali-earth-metals;
+}
+.transition-metal-border-bottom,
+.transition-metals-border-bottom {
+  border-bottom: $border-size solid $transition-metals;
+}
+.basic-metal-border-bottom,
+.basic-metals-border-bottom {
+  border-bottom: $border-size solid $basic-metal;
+}
+.semimetal-border-bottom,
+.semimetals-border-bottom {
+  border-bottom: $border-size solid $semimetal;
+}
+.nonmetal-border-bottom,
+.nonmetals-border-bottom {
+  border-bottom: $border-size solid $nonmetals;
+}
+.halogen-border-bottom,
+.halogens-border-bottom {
+  border-bottom: $border-size solid $halogen;
+}
+.noble-gas-border-bottom,
+.noble-gasses-border-bottom {
+  border-bottom: $border-size solid $noble-gasses;
+}
+.metalloid-border-bottom,
+.metalloids-border-bottom {
+  border-bottom: $border-size solid $metalloids;
+}
+.lanthanoid-border-bottom,
+.lanthanoids-border-bottom {
+  border-bottom: $border-size solid $lanthanoids;
+}
+.actinoid-border-bottom,
+.actinoids-border-bottom {
+  border-bottom: $border-size solid $actinoids;
+}

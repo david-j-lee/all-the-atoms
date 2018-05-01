@@ -1,0 +1,10 @@
+.period {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  div {
+    opacity: .5;
+    padding-right: 5px;
+  }
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "name-plural": "Alkali Metals",
+    "name-singular": "Alkali Metal"
+  },
+  {
+    "name-plural": "Alkali Earth Metals",
+    "name-singular": "Alkali Earth Metal"
+  },
+  {
+    "name-plural": "Transition Metals",
+    "name-singular": "Transition Metal"
+  },
+  {
+    "name-plural": "Basic Metals",
+    "name-singular": "Basic Metal"
+  },
+  {
+    "name-plural": "Semimetals",
+    "name-singular": "Semimetal"
+  },
+  {
+    "name-plural": "Nonmetals",
+    "name-singular": "Nonmetal"
+  },
+  {
+    "name-plural": "Halogens",
+    "name-singular": "Halogen"
+  },
+  {
+    "name-plural": "Noble Gasses",
+    "name-singular": "Noble Gas"
+  },
+  {
+    "name-plural": "Lanthanoids",
+    "name-singular": "Lanthanoid"
+  },
+  {
+    "name-plural": "Actinoids",
+    "name-singular": "Actinoid"
+  }
+]

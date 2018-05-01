@@ -1,0 +1,15 @@
+.legend-item {
+  margin: 0 5px 5px 5px;
+  padding: 0;
+  font-weight: 400;
+  background-color: transparent;
+  border: none;
+}
+.legend-item-content {
+  padding: 0 3px;
+  &.active,
+  &:hover {
+    background-color: transparent !important;
+    cursor: pointer;
+  }
+}
