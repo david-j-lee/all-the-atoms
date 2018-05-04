@@ -22,5 +22,7 @@ The following prefixes can be used:
 ## TODO
 
 * [x] Implement element popover on hover (not out of the box with reactstrap)
+* [ ] Fix strange input behavior on mobile
+* [ ] Add github link in footer
 * [ ] Make temp unit selectable between kelvins, celsius or fahrenheit
 * [ ] Implement Redux
