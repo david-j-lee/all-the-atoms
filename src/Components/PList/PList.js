@@ -52,16 +52,16 @@ export default class PList extends React.Component {
         <Table id="plist" responsive striped>
           <thead>
             <tr className="text-center">
-              <th>#</th>
-              <th>Symbol</th>
-              <th>Name</th>
-              <th>Mass</th>
-              <th>Type</th>
-              <th>Period</th>
-              <th>Group</th>
-              <th>Melt (K)</th>
-              <th>Boil (K)</th>
-              <th>State</th>
+              <th className="text-right">#</th>
+              <th className="text-left">Symbol</th>
+              <th className="text-left">Name</th>
+              <th className="text-right">Mass</th>
+              <th className="text-left">Type</th>
+              <th className="text-right">Period</th>
+              <th className="text-right">Group</th>
+              <th className="text-right">Melt (K)</th>
+              <th className="text-right">Boil (K)</th>
+              <th className="text-left">State</th>
             </tr>
           </thead>
           <tbody>{this.state.elements}</tbody>
