@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { Collapse, Navbar, NavbarBrand, Nav, NavItem } from "reactstrap";
 import "./Toolbar.css";
 
@@ -19,7 +21,7 @@ export default class Toolbar extends React.Component {
     this.handleTempKeyDown = this.handleTempKeyDown.bind(this);
 
     this.state = {
-      icon: this.props.theme === "light" ? "moon" : "sun",
+      icon: this.props.theme === "light" ? ["fas", "moon"] : ["far", "sun"],
       theme: this.props.theme,
       isNavExpanded: false,
       isSearchExpanded: false,
@@ -59,7 +61,7 @@ export default class Toolbar extends React.Component {
   requestChangeTheme = () => {
     this.props.requestChangeTheme();
     this.setState({
-      icon: this.state.icon === "sun" ? "moon" : "sun",
+      icon: this.props.theme === "light" ? ["fas", "sun"] : ["fas", "moon"],
       theme: this.state.theme === "light" ? "dark" : "light"
     });
   };
@@ -119,10 +121,16 @@ export default class Toolbar extends React.Component {
         className={`${this.state.isSearchExpanded ? "expanded" : "collapsed"}`}
       >
         <div className="input-group my-3 my-md-0">
-          <div className="input-group-prepend" onClick={this.toggleSearch}>
-            <button className="input-group-text my-2">
+          <div className="input-group-prepend">
+            <button
+              className="input-group-text d-none d-md-block my-2"
+              onClick={this.toggleSearch}
+            >
               <FontAwesomeIcon icon="search" size="lg" />
             </button>
+            <span className="input-group-text d-md-none my-2">
+              <FontAwesomeIcon icon="search" size="lg" />
+            </span>
           </div>
           <input
             ref={input => {
@@ -144,10 +152,16 @@ export default class Toolbar extends React.Component {
         className={`${this.state.isTempExpanded ? "expanded" : "collapsed"}`}
       >
         <div className="temp input-group my-3 my-md-0">
-          <div className="input-group-prepend" onClick={this.toggleTemp}>
-            <button className="input-group-text my-2">
+          <div className="input-group-prepend">
+            <button
+              className="input-group-text d-none d-md-block my-2"
+              onClick={this.toggleTemp}
+            >
               <FontAwesomeIcon icon="thermometer" size="lg" />
             </button>
+            <span className="input-group-text d-md-none my-2">
+              <FontAwesomeIcon icon="thermometer" size="lg" />
+            </span>
           </div>
           <input
             ref={input => {
@@ -170,14 +184,11 @@ export default class Toolbar extends React.Component {
     );
 
     let Theme = (
-      <div
-        onClick={this.requestChangeTheme}
-        className="my-3 my-md-2"
-      >
+      <div onClick={this.requestChangeTheme} className="my-3 my-md-2">
         <button className="theme-toggler btn-no-style">
           <FontAwesomeIcon icon={this.state.icon} size="lg" />
           <span className="d-md-none">
-            {this.state.icon === "sun" ? "Light Side" : "Dark Side"}
+            {this.state.theme === "light" ? "Light Side" : "Dark Side"}
           </span>
         </button>
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 import "./Element.css";
 
 import { Popover, PopoverHeader, PopoverBody } from "reactstrap";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class Element extends React.Component {
   constructor(props) {

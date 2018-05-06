@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import "./Main.css";
 
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import elementData from "../../Data/elements.json";
 import typeData from "../../Data/types.json";
@@ -186,15 +186,26 @@ export default class Main extends React.Component {
           </Route>
         </Switch>
         <footer>
-          Made by{" "}
-          <a
-            href="http://www.davethedev.me"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            David Lee
-          </a>{" "}
-          for Michelle Kang <FontAwesomeIcon icon="heart" size="xs" />
+          <div>
+            <a
+              href="https://github.com/david-j-lee/theptable"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Github
+            </a>
+          </div>
+          <div>
+            Made by{" "}
+            <a
+              href="http://www.davethedev.me"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              David Lee
+            </a>{" "}
+            for Michelle Kang <FontAwesomeIcon icon="heart" size="xs" />
+          </div>
         </footer>
       </div>
     );
