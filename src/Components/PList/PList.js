@@ -28,7 +28,6 @@ export default class PList extends React.Component {
             <td className="text-right">{element["atomic-number"]}</td>
             <td>{element["symbol"]}</td>
             <td>{element["atomic-name"]}</td>
-            <td className="text-right">{element["atomic-mass"]}</td>
             <td>
               <span className={`${typeClassSafe}-border-bottom pb-0`}>
                 {element["type"]}
@@ -36,6 +35,7 @@ export default class PList extends React.Component {
             </td>
             <td className="text-right">{element["period"]}</td>
             <td className="text-right">{element["group"]}</td>
+            <td className="text-right">{element["atomic-mass"]}</td>
             <td className="text-right">{element["melting-point"]}</td>
             <td className="text-right">{element["boiling-point"]}</td>
             <td>{element["state"]}</td>
@@ -55,10 +55,10 @@ export default class PList extends React.Component {
               <th className="text-right">#</th>
               <th className="text-left">Symbol</th>
               <th className="text-left">Name</th>
-              <th className="text-right">Mass</th>
               <th className="text-left">Type</th>
               <th className="text-right">Period</th>
               <th className="text-right">Group</th>
+              <th className="text-right">Mass</th>
               <th className="text-right">Melt (K)</th>
               <th className="text-right">Boil (K)</th>
               <th className="text-left">State</th>
