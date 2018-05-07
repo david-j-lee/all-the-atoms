@@ -2,7 +2,7 @@ import React from "react";
 import "./Element.css";
 
 import { Popover, PopoverHeader, PopoverBody } from "reactstrap";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class Element extends React.Component {
   constructor(props) {
@@ -53,6 +53,17 @@ export default class Element extends React.Component {
       group-${element["group"]}
       period-${element["period"]}`;
 
+    // set element atomic mass
+    if (element["atomic-mass"] < 0) {
+      element["atomic-mass-formatted"] =
+        "[" + element["atomic-mass"] * -1 + "]";
+    } else {
+      element["atomic-mass-formatted"] =
+        element["atomic-mass"].toFixed(
+          4 - element["atomic-mass"].toFixed(0).length
+        ) + "";
+    }
+
     // show element state if it exists
     // the state is set when a temperature is set
     let State = "";
@@ -86,7 +97,7 @@ export default class Element extends React.Component {
           className={`${className} ${element.isActive ? "active" : "inactive"}`}
         >
           <div className="element-info">
-            <div className="atomic-number d-none d-md-flex">
+            <div className="atomic-number d-flex">
               <span>{element["atomic-number"]}</span>
               <span className="element-state ml-auto">{State}</span>
             </div>
@@ -94,10 +105,8 @@ export default class Element extends React.Component {
             <div className="atomic-name d-none d-lg-block">
               {element["atomic-name"]}
             </div>
-            <div className="atomic-mass d-none d-lg-block">
-              {element["atomic-mass"] < 0
-                ? "(" + element["atomic-mass"] * -1 + ")"
-                : element["atomic-mass"]}
+            <div className="atomic-mass">
+              {element["atomic-mass-formatted"]}
             </div>
           </div>
         </div>
@@ -132,7 +141,9 @@ export default class Element extends React.Component {
                 </tr>
                 <tr>
                   <td>Atomic Mass</td>
-                  <td className="text-right">{element["atomic-mass"]}</td>
+                  <td className="text-right">
+                    {element["atomic-mass-formatted"]}
+                  </td>
                 </tr>
               </tbody>
             </table>
