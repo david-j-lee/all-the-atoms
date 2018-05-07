@@ -19,6 +19,17 @@ export default class PList extends React.Component {
 
   getElements() {
     let Elements = elementData.map((element, i) => {
+      // set element atomic mass
+      if (element["atomic-mass"] < 0) {
+        element["atomic-mass-formatted"] =
+          "[" + element["atomic-mass"] * -1 + "]";
+      } else {
+        element["atomic-mass-formatted"] =
+          element["atomic-mass"].toFixed(
+            4 - element["atomic-mass"].toFixed(0).length
+          ) + "";
+      }
+
       if (!element.isActive) {
         return undefined;
       } else {
@@ -35,7 +46,7 @@ export default class PList extends React.Component {
             </td>
             <td className="text-right">{element["period"]}</td>
             <td className="text-right">{element["group"]}</td>
-            <td className="text-right">{element["atomic-mass"]}</td>
+            <td className="text-right">{element["atomic-mass-formatted"]}</td>
             <td className="text-right">{element["melting-point"]}</td>
             <td className="text-right">{element["boiling-point"]}</td>
             <td>{element["state"]}</td>
