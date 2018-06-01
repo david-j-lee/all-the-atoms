@@ -31,6 +31,9 @@ import Divider from "@material-ui/core/Divider";
 // material icons
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
+// font awesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import ThemePicker from "../ThemePicker/ThemePicker";
 
 export class Sidebar extends React.Component {
@@ -133,7 +136,7 @@ export class Sidebar extends React.Component {
                 value={this.state.search}
               />
             </FormControl>
-            <div className="mx-3 mt-1 mb-3 row">
+            <div className="mx-3 mt-1 row">
               <FormControl className="col-auto col-temp">
                 <TextField
                   label="Temperature"
@@ -157,6 +160,17 @@ export class Sidebar extends React.Component {
                   <MenuItem value="f">F</MenuItem>
                 </Select>
               </FormControl>
+            </div>
+            <div className="mx-3 mb-3">
+              <Typography>
+                <small>
+                  <FontAwesomeIcon icon="circle" size="xs" /> Solid
+                  &nbsp;&nbsp;&nbsp;
+                  <FontAwesomeIcon icon="tint" size="xs" /> Liquid
+                  &nbsp;&nbsp;&nbsp;
+                  <FontAwesomeIcon icon="cloud" size="xs" /> Gas
+                </small>
+              </Typography>
             </div>
             <Divider className="mt-3" />
             <FormControl className="mx-3 my-3">
