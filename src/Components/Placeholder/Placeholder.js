@@ -15,32 +15,24 @@ export default class Placeholder extends React.Component {
   }
 
   render() {
+    let type, text;
     if (this.props.type === "l") {
-      // for lanthaniods
-      return (
-        <div className="placeholder-container">
-          <div
-            className={`placeholder-body lanthanoid-bg ${
-              this.state.isActive ? "active" : "inactive"
-            }`}
-          >
-            <span className="d-none d-md-block">57-71</span>
-          </div>
-        </div>
-      );
+      type = "lanthanoid";
+      text = "57-71";
     } else if (this.props.type === "a") {
-      // for actinoids
-      return (
-        <div className="placeholder-container">
-          <div
-            className={`placeholder-body actinoid-bg ${
-              this.state.isActive ? "active" : "inactive"
-            }`}
-          >
-            <span className="d-none d-md-block">89-103</span>
-          </div>
-        </div>
-      );
+      type = "actinoid";
+      text = "89-103";
     }
+    return (
+      <div className="placeholder-container">
+        <div
+          className={`placeholder-body ${type}-bg ${
+            this.state.isActive ? "active" : "inactive"
+          }`}
+        >
+          <span>{text}</span>
+        </div>
+      </div>
+    );
   }
 }

@@ -19,11 +19,23 @@ The following prefixes can be used:
 * `symbol`
 * `type`
 
+## References
+
+* Atomic Mass taken from [wiki](https://en.wikipedia.org/wiki/Periodic_table)
+* Electronegativity taken from [wiki](https://en.wikipedia.org/wiki/Electronegativity)
+* Electron Configurations taken from [wiki](https://en.wikipedia.org/wiki/Electron_configurations_of_the_elements_(data_page))
+* Ionization Energies taken from [wiki](https://en.wikipedia.org/wiki/Ionization_energies_of_the_elements_(data_page))
+
 ## TODO
 
 * [x] Implement element popover on hover (not out of the box with reactstrap)
-* [ ] Fix strange input behavior on mobile
+* [x] Set atomic mass to 4 significant figures
+* [x] Add [Electronegativities](https://en.wikipedia.org/wiki/Electronegativity)
+* [x] Add [Electron configuration](https://opentextbc.ca/chemistry/wp-content/uploads/sites/150/2016/05/CNX_Chem_06_04_Ptableconf.jpg)
+* [x] Add [Ionization Energies](https://www.lenntech.com/periodic-chart-elements/ionization-energy.htm)
+* [x] Fix strange input behavior on mobile (iOS)
 * [x] Add github link in footer
-* [ ] Remove white space on mobile so there is no scrolling if it all fits on one screen
-* [ ] Make temp unit selectable between kelvins, celsius or fahrenheit
-* [ ] Implement Redux
+* [x] Remove white space on mobile so there is no scrolling if it all fits on one screen
+* [x] Make temp unit selectable between kelvins, celsius or fahrenheit
+* [x] Implement Redux
+* [ ] Add clear button next to text fields

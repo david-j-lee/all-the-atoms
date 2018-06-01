@@ -1,0 +1,11 @@
+.menu-button {
+  margin-left: -12px;
+  margin-right: 20px;
+}
+
+@media(min-width: 1280px) {
+  .mui-navbar {
+    margin-right: 250px !important;
+    width: calc(100% - 250px) !important;
+  }
+}

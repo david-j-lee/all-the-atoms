@@ -2,6 +2,14 @@
 @import "styles/theme.scss";
 @import "styles/types.scss";
 
+body,
+html,
+#root,
+.site-wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
 body {
   font-family: "Josefin Sans", sans-serif;
   min-width: 300px;
@@ -25,9 +33,24 @@ h6 {
   cursor: pointer;
 }
 
-.p-table,
-.table-responsive {
-  &::-webkit-scrollbar {
-    height: 7px;
-  }
+.typo-sm {
+  font-size: .7rem !important;
+}
+
+.p-table {
+  overflow-x: auto;
+  // &::-webkit-scrollbar {
+  //   height: 7px;
+  //   background-color: white;
+  // }
+}
+
+a:hover,
+a:active {
+  color: inherit;
+}
+
+.text-decoration-none,
+.text-decoration-none:hover {
+  text-decoration: none;
 }

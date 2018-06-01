@@ -1,0 +1,51 @@
+@media (min-width: 1280px) {
+  .sideBar {
+    position: relative;
+    min-width: 250px;
+  }
+}
+
+.sideBar-wrapper {
+  min-height: 100vh;
+}
+
+.sideBar-drawer {
+  width: 250px;
+  min-height: 100vh;
+}
+
+.sideBar-drawer-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.sideBar-top {
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.sideBar-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sideBar-link {
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.sideBar-display {
+  flex-wrap: nowrap;
+}
+
+.col-temp {
+  width: calc(100% - 50px) !important;
+}
+
+.col-temp-unit {
+  width: 50px !important;
+  text-align: center;
+}

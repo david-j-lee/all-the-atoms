@@ -8,7 +8,12 @@
     "group": 1,
     "type": "Nonmetal",
     "melting-point": 14.01,
-    "boiling-point": 20.28
+    "boiling-point": 20.28,
+    "electronegativity": 2.2,
+    "electron-configuration": "1s^1",
+    "ionization-energies": {
+      "first": 1312.0
+    }
   },
   {
     "atomic-number": 2,
@@ -19,7 +24,12 @@
     "group": 18,
     "type": "Noble gas",
     "melting-point": 0.956,
-    "boiling-point": 4.22
+    "boiling-point": 4.22,
+    "electronegativity": "",
+    "electron-configuration": "1s^2",
+    "ionization-energies": {
+      "first": 2372.3
+    }
   },
   {
     "atomic-number": 3,
@@ -30,7 +40,12 @@
     "group": 1,
     "type": "Alkali metal",
     "melting-point": 453.69,
-    "boiling-point": 1560
+    "boiling-point": 1560,
+    "electronegativity": 0.98,
+    "electron-configuration": "2s^1",
+    "ionization-energies": {
+      "first": 520.2
+    }
   },
   {
     "atomic-number": 4,
@@ -41,7 +56,12 @@
     "group": 2,
     "type": "Alkali earth metal",
     "melting-point": 1560,
-    "boiling-point": 2742
+    "boiling-point": 2742,
+    "electronegativity": 1.57,
+    "electron-configuration": "2s^2",
+    "ionization-energies": {
+      "first": 899.5
+    }
   },
   {
     "atomic-number": 5,
@@ -52,7 +72,12 @@
     "group": 13,
     "type": "Semimetal",
     "melting-point": 2349,
-    "boiling-point": 4200
+    "boiling-point": 4200,
+    "electronegativity": 2.04,
+    "electron-configuration": "2s^2 2p^1",
+    "ionization-energies": {
+      "first": 800.6
+    }
   },
   {
     "atomic-number": 6,
@@ -63,7 +88,12 @@
     "group": 14,
     "type": "Nonmetal",
     "melting-point": 3800,
-    "boiling-point": 4300
+    "boiling-point": 4300,
+    "electronegativity": 2.55,
+    "electron-configuration": "2s^2 2p^2",
+    "ionization-energies": {
+      "first": 1086.5
+    }
   },
   {
     "atomic-number": 7,
@@ -74,7 +104,12 @@
     "group": 15,
     "type": "Nonmetal",
     "melting-point": 63.15,
-    "boiling-point": 77.36
+    "boiling-point": 77.36,
+    "electronegativity": 3.04,
+    "electron-configuration": "2s^2 2p^3",
+    "ionization-energies": {
+      "first": 1402.3
+    }
   },
   {
     "atomic-number": 8,
@@ -85,7 +120,12 @@
     "group": 16,
     "type": "Nonmetal",
     "melting-point": 54.36,
-    "boiling-point": 90.2
+    "boiling-point": 90.2,
+    "electronegativity": 3.44,
+    "electron-configuration": "2s^2 2p^4",
+    "ionization-energies": {
+      "first": 1313.9
+    }
   },
   {
     "atomic-number": 9,
@@ -96,29 +136,44 @@
     "group": 17,
     "type": "Halogen",
     "melting-point": 53.53,
-    "boiling-point": 85.03
+    "boiling-point": 85.03,
+    "electronegativity": 3.98,
+    "electron-configuration": "2s^2 2p^5",
+    "ionization-energies": {
+      "first": 1681.0
+    }
   },
   {
     "atomic-number": 10,
     "symbol": "Ne",
     "atomic-name": "Neon",
-    "atomic-mass": 20.180,
+    "atomic-mass": 20.18,
     "period": 2,
     "group": 18,
     "type": "Noble gas",
     "melting-point": 24.56,
-    "boiling-point": 27.07
+    "boiling-point": 27.07,
+    "electronegativity": "",
+    "electron-configuration": "2s^2 2p^6",
+    "ionization-energies": {
+      "first": 2080.7
+    }
   },
   {
     "atomic-number": 11,
     "symbol": "Na",
     "atomic-name": "Sodium",
-    "atomic-mass": 22.990,
+    "atomic-mass": 22.99,
     "period": 3,
     "group": 1,
     "type": "Alkali metal",
     "melting-point": 370.87,
-    "boiling-point": 1156
+    "boiling-point": 1156,
+    "electronegativity": 0.93,
+    "electron-configuration": "3s^1",
+    "ionization-energies": {
+      "first": 495.8
+    }
   },
   {
     "atomic-number": 12,
@@ -129,7 +184,12 @@
     "group": 2,
     "type": "Alkali earth metal",
     "melting-point": 923,
-    "boiling-point": 1363
+    "boiling-point": 1363,
+    "electronegativity": 1.31,
+    "electron-configuration": "3s^2",
+    "ionization-energies": {
+      "first": 737.7
+    }
   },
   {
     "atomic-number": 13,
@@ -140,7 +200,12 @@
     "group": 13,
     "type": "Basic metal",
     "melting-point": 933.47,
-    "boiling-point": 2792
+    "boiling-point": 2792,
+    "electronegativity": 1.61,
+    "electron-configuration": "3s^2 3p^1",
+    "ionization-energies": {
+      "first": 577.5
+    }
   },
   {
     "atomic-number": 14,
@@ -151,7 +216,12 @@
     "group": 14,
     "type": "Semimetal",
     "melting-point": 1687,
-    "boiling-point": 3538
+    "boiling-point": 3538,
+    "electronegativity": 1.9,
+    "electron-configuration": "3s^2 3p^2",
+    "ionization-energies": {
+      "first": 786.5
+    }
   },
   {
     "atomic-number": 15,
@@ -162,7 +232,12 @@
     "group": 15,
     "type": "Nonmetal",
     "melting-point": 317.3,
-    "boiling-point": 550
+    "boiling-point": 550,
+    "electronegativity": 2.19,
+    "electron-configuration": "3s^2 3p^3",
+    "ionization-energies": {
+      "first": 1011.8
+    }
   },
   {
     "atomic-number": 16,
@@ -173,7 +248,12 @@
     "group": 16,
     "type": "Nonmetal",
     "melting-point": 388.36,
-    "boiling-point": 717.87
+    "boiling-point": 717.87,
+    "electronegativity": 2.58,
+    "electron-configuration": "3s^2 3p^4",
+    "ionization-energies": {
+      "first": 999.6
+    }
   },
   {
     "atomic-number": 17,
@@ -184,7 +264,12 @@
     "group": 17,
     "type": "Halogen",
     "melting-point": 171.6,
-    "boiling-point": 239.11
+    "boiling-point": 239.11,
+    "electronegativity": 3.16,
+    "electron-configuration": "3s^2 3p^5",
+    "ionization-energies": {
+      "first": 1251.2
+    }
   },
   {
     "atomic-number": 18,
@@ -195,7 +280,12 @@
     "group": 18,
     "type": "Noble gas",
     "melting-point": 83.8,
-    "boiling-point": 87.3
+    "boiling-point": 87.3,
+    "electronegativity": "",
+    "electron-configuration": "3s^2 3p^6",
+    "ionization-energies": {
+      "first": 1520.6
+    }
   },
   {
     "atomic-number": 19,
@@ -206,7 +296,12 @@
     "group": 1,
     "type": "Alkali metal",
     "melting-point": 336.53,
-    "boiling-point": 1032
+    "boiling-point": 1032,
+    "electronegativity": 0.82,
+    "electron-configuration": "4s^1",
+    "ionization-energies": {
+      "first": 418.8
+    }
   },
   {
     "atomic-number": 20,
@@ -217,7 +312,12 @@
     "group": 2,
     "type": "Alkali earth metal",
     "melting-point": 1115,
-    "boiling-point": 1757
+    "boiling-point": 1757,
+    "electronegativity": 1.0,
+    "electron-configuration": "4s^2",
+    "ionization-energies": {
+      "first": 589.8
+    }
   },
   {
     "atomic-number": 21,
@@ -228,18 +328,12 @@
     "group": 3,
     "type": "Transition metal",
     "melting-point": 1814,
-    "boiling-point": 3109
-  },
-  {
-    "atomic-number": 21,
-    "symbol": "Sc",
-    "atomic-name": "Scandium",
-    "atomic-mass": 44.956,
-    "period": 4,
-    "group": 3,
-    "type": "Transition metal",
-    "melting-point": 1814,
-    "boiling-point": 3109
+    "boiling-point": 3109,
+    "electronegativity": 1.36,
+    "electron-configuration": "4s^2 3d^1",
+    "ionization-energies": {
+      "first": 633.1
+    }
   },
   {
     "atomic-number": 22,
@@ -250,7 +344,12 @@
     "group": 4,
     "type": "Transition metal",
     "melting-point": 1941,
-    "boiling-point": 3560
+    "boiling-point": 3560,
+    "electronegativity": 1.54,
+    "electron-configuration": "4s^2 3d^2",
+    "ionization-energies": {
+      "first": 658.8
+    }
   },
   {
     "atomic-number": 23,
@@ -261,7 +360,12 @@
     "group": 5,
     "type": "Transition metal",
     "melting-point": 2183,
-    "boiling-point": 3680
+    "boiling-point": 3680,
+    "electronegativity": 1.63,
+    "electron-configuration": "4s^2 3d^3",
+    "ionization-energies": {
+      "first": 650.9
+    }
   },
   {
     "atomic-number": 24,
@@ -272,7 +376,12 @@
     "group": 6,
     "type": "Transition metal",
     "melting-point": 2180,
-    "boiling-point": 2944
+    "boiling-point": 2944,
+    "electronegativity": 1.66,
+    "electron-configuration": "4s^1 3d^5",
+    "ionization-energies": {
+      "first": 652.9
+    }
   },
   {
     "atomic-number": 25,
@@ -283,7 +392,12 @@
     "group": 7,
     "type": "Transition metal",
     "melting-point": 1519,
-    "boiling-point": 2334
+    "boiling-point": 2334,
+    "electronegativity": 1.55,
+    "electron-configuration": "4s^2 3d^5",
+    "ionization-energies": {
+      "first": 717.3
+    }
   },
   {
     "atomic-number": 26,
@@ -294,7 +408,12 @@
     "group": 8,
     "type": "Transition metal",
     "melting-point": 1811,
-    "boiling-point": 3134
+    "boiling-point": 3134,
+    "electronegativity": 1.83,
+    "electron-configuration": "4s^2 3d^6",
+    "ionization-energies": {
+      "first": 762.5
+    }
   },
   {
     "atomic-number": 27,
@@ -305,7 +424,12 @@
     "group": 9,
     "type": "Transition metal",
     "melting-point": 1768,
-    "boiling-point": 3200
+    "boiling-point": 3200,
+    "electronegativity": 1.88,
+    "electron-configuration": "4s^2 3d^7",
+    "ionization-energies": {
+      "first": 760.4
+    }
   },
   {
     "atomic-number": 28,
@@ -316,7 +440,12 @@
     "group": 10,
     "type": "Transition metal",
     "melting-point": 1728,
-    "boiling-point": 3186
+    "boiling-point": 3186,
+    "electronegativity": 1.91,
+    "electron-configuration": "4s^2 3d^8",
+    "ionization-energies": {
+      "first": 737.1
+    }
   },
   {
     "atomic-number": 29,
@@ -327,7 +456,12 @@
     "group": 11,
     "type": "Transition metal",
     "melting-point": 1357.77,
-    "boiling-point": 2835
+    "boiling-point": 2835,
+    "electronegativity": 1.9,
+    "electron-configuration": "4s^1 3d^10",
+    "ionization-energies": {
+      "first": 745.5
+    }
   },
   {
     "atomic-number": 30,
@@ -338,7 +472,12 @@
     "group": 12,
     "type": "Transition metal",
     "melting-point": 692.88,
-    "boiling-point": 1180
+    "boiling-point": 1180,
+    "electronegativity": 1.65,
+    "electron-configuration": "4s^2 3d^10",
+    "ionization-energies": {
+      "first": 906.4
+    }
   },
   {
     "atomic-number": 31,
@@ -349,18 +488,28 @@
     "group": 13,
     "type": "Basic metal",
     "melting-point": 302.9146,
-    "boiling-point": 2477
+    "boiling-point": 2477,
+    "electronegativity": 1.81,
+    "electron-configuration": "4s^2 3d^10 4p^1",
+    "ionization-energies": {
+      "first": 578.8
+    }
   },
   {
     "atomic-number": 32,
     "symbol": "Ge",
     "atomic-name": "Germanium",
-    "atomic-mass": 72.630,
+    "atomic-mass": 72.63,
     "period": 4,
     "group": 14,
     "type": "Semimetal",
     "melting-point": 1211.4,
-    "boiling-point": 3106
+    "boiling-point": 3106,
+    "electronegativity": 2.01,
+    "electron-configuration": "4s^2 3d^10 4p^2",
+    "ionization-energies": {
+      "first": 762.0
+    }
   },
   {
     "atomic-number": 33,
@@ -371,7 +520,12 @@
     "group": 15,
     "type": "Semimetal",
     "melting-point": 1090,
-    "boiling-point": 887
+    "boiling-point": 887,
+    "electronegativity": 2.18,
+    "electron-configuration": "4s^2 3d^10 4p^3",
+    "ionization-energies": {
+      "first": 947.0
+    }
   },
   {
     "atomic-number": 34,
@@ -382,7 +536,12 @@
     "group": 16,
     "type": "Nonmetal",
     "melting-point": 453,
-    "boiling-point": 958
+    "boiling-point": 958,
+    "electronegativity": 2.55,
+    "electron-configuration": "4s^2 3d^10 4p^4",
+    "ionization-energies": {
+      "first": 941.0
+    }
   },
   {
     "atomic-number": 35,
@@ -393,7 +552,12 @@
     "group": 17,
     "type": "Halogen",
     "melting-point": 265.8,
-    "boiling-point": 332
+    "boiling-point": 332,
+    "electronegativity": 2.96,
+    "electron-configuration": "4s^2 3d^10 4p^5",
+    "ionization-energies": {
+      "first": 1139.9
+    }
   },
   {
     "atomic-number": 36,
@@ -404,7 +568,12 @@
     "group": 18,
     "type": "Noble gas",
     "melting-point": 115.79,
-    "boiling-point": 119.93
+    "boiling-point": 119.93,
+    "electronegativity": 3.0,
+    "electron-configuration": "4s^2 3d^10 4p^6",
+    "ionization-energies": {
+      "first": 1350.8
+    }
   },
   {
     "atomic-number": 37,
@@ -415,7 +584,12 @@
     "group": 1,
     "type": "Alkali metal",
     "melting-point": 312.46,
-    "boiling-point": 961
+    "boiling-point": 961,
+    "electronegativity": 0.82,
+    "electron-configuration": "5s^1",
+    "ionization-energies": {
+      "first": 403.0
+    }
   },
   {
     "atomic-number": 38,
@@ -426,7 +600,12 @@
     "group": 2,
     "type": "Alkali earth metal",
     "melting-point": 1050,
-    "boiling-point": 1655
+    "boiling-point": 1655,
+    "electronegativity": 0.95,
+    "electron-configuration": "5s^2",
+    "ionization-energies": {
+      "first": 549.5
+    }
   },
   {
     "atomic-number": 39,
@@ -437,7 +616,12 @@
     "group": 3,
     "type": "Transition metal",
     "melting-point": 1799,
-    "boiling-point": 3609
+    "boiling-point": 3609,
+    "electronegativity": 1.22,
+    "electron-configuration": "5s^2 4d^1",
+    "ionization-energies": {
+      "first": 600.0
+    }
   },
   {
     "atomic-number": 40,
@@ -448,7 +632,12 @@
     "group": 4,
     "type": "Transition metal",
     "melting-point": 2128,
-    "boiling-point": 4682
+    "boiling-point": 4682,
+    "electronegativity": 1.33,
+    "electron-configuration": "5s^2 4d^2",
+    "ionization-energies": {
+      "first": 640.1
+    }
   },
   {
     "atomic-number": 41,
@@ -459,7 +648,12 @@
     "group": 5,
     "type": "Transition metal",
     "melting-point": 2750,
-    "boiling-point": 5017
+    "boiling-point": 5017,
+    "electronegativity": 1.6,
+    "electron-configuration": "5s^1 4d^4",
+    "ionization-energies": {
+      "first": 652.1
+    }
   },
   {
     "atomic-number": 42,
@@ -470,7 +664,12 @@
     "group": 6,
     "type": "Transition metal",
     "melting-point": 2896,
-    "boiling-point": 4912
+    "boiling-point": 4912,
+    "electronegativity": 2.16,
+    "electron-configuration": "5s^1 4d^5",
+    "ionization-energies": {
+      "first": 684.3
+    }
   },
   {
     "atomic-number": 43,
@@ -481,7 +680,12 @@
     "group": 7,
     "type": "Transition metal",
     "melting-point": 2430,
-    "boiling-point": 4538
+    "boiling-point": 4538,
+    "electronegativity": 1.9,
+    "electron-configuration": "5s^1 4d^6",
+    "ionization-energies": {
+      "first": 702
+    }
   },
   {
     "atomic-number": 44,
@@ -492,7 +696,12 @@
     "group": 8,
     "type": "Transition metal",
     "melting-point": 2607,
-    "boiling-point": 4423
+    "boiling-point": 4423,
+    "electronegativity": 2.2,
+    "electron-configuration": "5s^1 4d^7",
+    "ionization-energies": {
+      "first": 710.2
+    }
   },
   {
     "atomic-number": 45,
@@ -503,7 +712,12 @@
     "group": 9,
     "type": "Transition metal",
     "melting-point": 2237,
-    "boiling-point": 3968
+    "boiling-point": 3968,
+    "electronegativity": 2.28,
+    "electron-configuration": "5s^1 4d^8",
+    "ionization-energies": {
+      "first": 719.7
+    }
   },
   {
     "atomic-number": 46,
@@ -514,7 +728,12 @@
     "group": 10,
     "type": "Transition metal",
     "melting-point": 1828.05,
-    "boiling-point": 3236
+    "boiling-point": 3236,
+    "electronegativity": 2.2,
+    "electron-configuration": "4d^10",
+    "ionization-energies": {
+      "first": 804.4
+    }
   },
   {
     "atomic-number": 47,
@@ -525,7 +744,12 @@
     "group": 11,
     "type": "Transition metal",
     "melting-point": 1234.93,
-    "boiling-point": 2435
+    "boiling-point": 2435,
+    "electronegativity": 1.93,
+    "electron-configuration": "5s^1 4d^10",
+    "ionization-energies": {
+      "first": 731.0
+    }
   },
   {
     "atomic-number": 48,
@@ -536,7 +760,12 @@
     "group": 12,
     "type": "Transition metal",
     "melting-point": 594.22,
-    "boiling-point": 1040
+    "boiling-point": 1040,
+    "electronegativity": 1.69,
+    "electron-configuration": "5s^2 4d^10",
+    "ionization-energies": {
+      "first": 867.8
+    }
   },
   {
     "atomic-number": 49,
@@ -547,7 +776,12 @@
     "group": 13,
     "type": "Basic metal",
     "melting-point": 429.75,
-    "boiling-point": 2345
+    "boiling-point": 2345,
+    "electronegativity": 1.78,
+    "electron-configuration": "5s^2 4d^10 5p^1",
+    "ionization-energies": {
+      "first": 558.3
+    }
   },
   {
     "atomic-number": 50,
@@ -558,7 +792,12 @@
     "group": 14,
     "type": "Basic metal",
     "melting-point": 505.08,
-    "boiling-point": 2875
+    "boiling-point": 2875,
+    "electronegativity": 1.96,
+    "electron-configuration": "5s^2 4d^10 5p^2",
+    "ionization-energies": {
+      "first": 708.6
+    }
   },
   {
     "atomic-number": 51,
@@ -569,29 +808,44 @@
     "group": 15,
     "type": "Semimetal",
     "melting-point": 903.78,
-    "boiling-point": 1860
+    "boiling-point": 1860,
+    "electronegativity": 2.05,
+    "electron-configuration": "5s^2 4d^10 5p^3",
+    "ionization-energies": {
+      "first": 834.0
+    }
   },
   {
     "atomic-number": 52,
     "symbol": "Te",
     "atomic-name": "Tellurium",
-    "atomic-mass": 127.60,
+    "atomic-mass": 127.6,
     "period": 5,
     "group": 16,
     "type": "Semimetal",
     "melting-point": 722.66,
-    "boiling-point": 1261
+    "boiling-point": 1261,
+    "electronegativity": 2.1,
+    "electron-configuration": "5s^2 4d^10 5p^4",
+    "ionization-energies": {
+      "first": 869.3
+    }
   },
   {
     "atomic-number": 53,
     "symbol": "I",
     "atomic-name": "Iodine",
-    "atomic-mass": 126.90,
+    "atomic-mass": 126.9,
     "period": 5,
     "group": 17,
     "type": "Halogen",
     "melting-point": 386.85,
-    "boiling-point": 457.4
+    "boiling-point": 457.4,
+    "electronegativity": 2.66,
+    "electron-configuration": "5s^2 4d^10 5p^5",
+    "ionization-energies": {
+      "first": 1008.4
+    }
   },
   {
     "atomic-number": 54,
@@ -602,7 +856,12 @@
     "group": 18,
     "type": "Noble gas",
     "melting-point": 161.4,
-    "boiling-point": 165.03
+    "boiling-point": 165.03,
+    "electronegativity": 2.6,
+    "electron-configuration": "5s^2 4d^10 5p^6",
+    "ionization-energies": {
+      "first": 1170.4
+    }
   },
   {
     "atomic-number": 55,
@@ -613,7 +872,12 @@
     "group": 1,
     "type": "Alkali metal",
     "melting-point": 301.59,
-    "boiling-point": 944
+    "boiling-point": 944,
+    "electronegativity": 0.79,
+    "electron-configuration": "6s^1",
+    "ionization-energies": {
+      "first": 375.7
+    }
   },
   {
     "atomic-number": 56,
@@ -624,7 +888,12 @@
     "group": 2,
     "type": "Alkali earth metal",
     "melting-point": 1000,
-    "boiling-point": 2170
+    "boiling-point": 2170,
+    "electronegativity": 0.89,
+    "electron-configuration": "6s^2",
+    "ionization-energies": {
+      "first": 502.9
+    }
   },
   {
     "atomic-number": 57,
@@ -635,7 +904,12 @@
     "group": null,
     "type": "Lanthanoid",
     "melting-point": 1193,
-    "boiling-point": 3737
+    "boiling-point": 3737,
+    "electronegativity": 1.1,
+    "electron-configuration": "6s^2 5d^1",
+    "ionization-energies": {
+      "first": 538.1
+    }
   },
   {
     "atomic-number": 58,
@@ -646,7 +920,12 @@
     "group": null,
     "type": "Lanthanoid",
     "melting-point": 1068,
-    "boiling-point": 3716
+    "boiling-point": 3716,
+    "electronegativity": 1.12,
+    "electron-configuration": "6s^2 4f^2",
+    "ionization-energies": {
+      "first": 534.4
+    }
   },
   {
     "atomic-number": 59,
@@ -657,7 +936,12 @@
     "group": null,
     "type": "Lanthanoid",
     "melting-point": 1208,
-    "boiling-point": 3793
+    "boiling-point": 3793,
+    "electronegativity": 1.13,
+    "electron-configuration": "6s^2 4f^3",
+    "ionization-energies": {
+      "first": 527.0
+    }
   },
   {
     "atomic-number": 60,
@@ -668,7 +952,12 @@
     "group": null,
     "type": "Lanthanoid",
     "melting-point": 1297,
-    "boiling-point": 3347
+    "boiling-point": 3347,
+    "electronegativity": 1.14,
+    "electron-configuration": "6s^2 4f^4",
+    "ionization-energies": {
+      "first": 533.1
+    }
   },
   {
     "atomic-number": 61,
@@ -679,7 +968,12 @@
     "group": null,
     "type": "Lanthanoid",
     "melting-point": 1315,
-    "boiling-point": 3273
+    "boiling-point": 3273,
+    "electronegativity": 1.13,
+    "electron-configuration": "6s^2 4f^5",
+    "ionization-energies": {
+      "first": 540.0
+    }
   },
   {
     "atomic-number": 62,
@@ -690,7 +984,12 @@
     "group": null,
     "type": "Lanthanoid",
     "melting-point": 1345,
-    "boiling-point": 2067
+    "boiling-point": 2067,
+    "electronegativity": 1.17,
+    "electron-configuration": "6s^2 4f^6",
+    "ionization-energies": {
+      "first": 544.5
+    }
   },
   {
     "atomic-number": 63,
@@ -701,7 +1000,12 @@
     "group": null,
     "type": "Lanthanoid",
     "melting-point": 1099,
-    "boiling-point": 1802
+    "boiling-point": 1802,
+    "electronegativity": 1.2,
+    "electron-configuration": "6s^2 4f^7",
+    "ionization-energies": {
+      "first": 547.1
+    }
   },
   {
     "atomic-number": 64,
@@ -712,7 +1016,12 @@
     "group": null,
     "type": "Lanthanoid",
     "melting-point": 1585,
-    "boiling-point": 3546
+    "boiling-point": 3546,
+    "electronegativity": 1.2,
+    "electron-configuration": "6s^2 4f^7 5d^1",
+    "ionization-energies": {
+      "first": 593.4
+    }
   },
   {
     "atomic-number": 65,
@@ -723,18 +1032,28 @@
     "group": null,
     "type": "Lanthanoid",
     "melting-point": 1629,
-    "boiling-point": 3503
+    "boiling-point": 3503,
+    "electronegativity": 1.1,
+    "electron-configuration": "6s^2 4f^9",
+    "ionization-energies": {
+      "first": 565.8
+    }
   },
   {
     "atomic-number": 66,
     "symbol": "Dy",
     "atomic-name": "Dysprosium",
-    "atomic-mass": 162.50,
+    "atomic-mass": 162.5,
     "period": 6,
     "group": null,
     "type": "Lanthanoid",
     "melting-point": 1680,
-    "boiling-point": 2840
+    "boiling-point": 2840,
+    "electronegativity": 1.22,
+    "electron-configuration": "6s^2 4f^10",
+    "ionization-energies": {
+      "first": 573.0
+    }
   },
   {
     "atomic-number": 67,
@@ -745,7 +1064,12 @@
     "group": null,
     "type": "Lanthanoid",
     "melting-point": 1734,
-    "boiling-point": 2993
+    "boiling-point": 2993,
+    "electronegativity": 1.23,
+    "electron-configuration": "6s^2 4f^11",
+    "ionization-energies": {
+      "first": 581.0
+    }
   },
   {
     "atomic-number": 68,
@@ -756,7 +1080,12 @@
     "group": null,
     "type": "Lanthanoid",
     "melting-point": 1802,
-    "boiling-point": 3141
+    "boiling-point": 3141,
+    "electronegativity": 1.24,
+    "electron-configuration": "6s^2 4f^12",
+    "ionization-energies": {
+      "first": 589.3
+    }
   },
   {
     "atomic-number": 69,
@@ -767,7 +1096,12 @@
     "group": null,
     "type": "Lanthanoid",
     "melting-point": 1818,
-    "boiling-point": 2223
+    "boiling-point": 2223,
+    "electronegativity": 1.25,
+    "electron-configuration": "6s^2 4f^13",
+    "ionization-energies": {
+      "first": 596.7
+    }
   },
   {
     "atomic-number": 70,
@@ -778,7 +1112,12 @@
     "group": null,
     "type": "Lanthanoid",
     "melting-point": 1097,
-    "boiling-point": 1469
+    "boiling-point": 1469,
+    "electronegativity": 1.1,
+    "electron-configuration": "6s^2 4f^14",
+    "ionization-energies": {
+      "first": 603.4
+    }
   },
   {
     "atomic-number": 71,
@@ -789,7 +1128,12 @@
     "group": null,
     "type": "Lanthanoid",
     "melting-point": 1925,
-    "boiling-point": 3675
+    "boiling-point": 3675,
+    "electronegativity": 1.27,
+    "electron-configuration": "6s^2 4f^14 5d^1",
+    "ionization-energies": {
+      "first": 523.5
+    }
   },
   {
     "atomic-number": 72,
@@ -800,7 +1144,12 @@
     "group": 4,
     "type": "Transition metal",
     "melting-point": 2506,
-    "boiling-point": 4876
+    "boiling-point": 4876,
+    "electronegativity": 1.3,
+    "electron-configuration": "6s^2 4f^14 5d^2",
+    "ionization-energies": {
+      "first": 658.5
+    }
   },
   {
     "atomic-number": 73,
@@ -811,7 +1160,12 @@
     "group": 5,
     "type": "Transition metal",
     "melting-point": 3290,
-    "boiling-point": 5731
+    "boiling-point": 5731,
+    "electronegativity": 1.5,
+    "electron-configuration": "6s^2 4f^14 5d^3",
+    "ionization-energies": {
+      "first": 761.0
+    }
   },
   {
     "atomic-number": 74,
@@ -822,7 +1176,12 @@
     "group": 6,
     "type": "Transition metal",
     "melting-point": 3695,
-    "boiling-point": 5828
+    "boiling-point": 5828,
+    "electronegativity": 2.36,
+    "electron-configuration": "6s^2 4f^14 5d^4",
+    "ionization-energies": {
+      "first": 770.0
+    }
   },
   {
     "atomic-number": 75,
@@ -833,7 +1192,12 @@
     "group": 7,
     "type": "Transition metal",
     "melting-point": 3459,
-    "boiling-point": 5869
+    "boiling-point": 5869,
+    "electronegativity": 1.9,
+    "electron-configuration": "6s^2 4f^14 5d^5",
+    "ionization-energies": {
+      "first": 760.0
+    }
   },
   {
     "atomic-number": 76,
@@ -844,7 +1208,12 @@
     "group": 8,
     "type": "Transition metal",
     "melting-point": 3306,
-    "boiling-point": 5285
+    "boiling-point": 5285,
+    "electronegativity": 2.2,
+    "electron-configuration": "6s^2 4f^14 5d^6",
+    "ionization-energies": {
+      "first": 840.0
+    }
   },
   {
     "atomic-number": 77,
@@ -855,7 +1224,12 @@
     "group": 9,
     "type": "Transition metal",
     "melting-point": 2719,
-    "boiling-point": 4701
+    "boiling-point": 4701,
+    "electronegativity": 2.2,
+    "electron-configuration": "6s^2 4f^14 5d^7",
+    "ionization-energies": {
+      "first": 880.0
+    }
   },
   {
     "atomic-number": 78,
@@ -866,7 +1240,12 @@
     "group": 10,
     "type": "Transition metal",
     "melting-point": 2041.4,
-    "boiling-point": 4098
+    "boiling-point": 4098,
+    "electronegativity": 2.28,
+    "electron-configuration": "6s^1 4f^14 5d^9",
+    "ionization-energies": {
+      "first": 870.0
+    }
   },
   {
     "atomic-number": 79,
@@ -877,7 +1256,12 @@
     "group": 11,
     "type": "Transition metal",
     "melting-point": 1337.33,
-    "boiling-point": 3129
+    "boiling-point": 3129,
+    "electronegativity": 2.54,
+    "electron-configuration": "6s^1 4f^14 5d^10",
+    "ionization-energies": {
+      "first": 890.1
+    }
   },
   {
     "atomic-number": 80,
@@ -888,7 +1272,12 @@
     "group": 12,
     "type": "Transition metal",
     "melting-point": 234.43,
-    "boiling-point": 629.88
+    "boiling-point": 629.88,
+    "electronegativity": 2.0,
+    "electron-configuration": "6s^2 4f^14 5d^10",
+    "ionization-energies": {
+      "first": 1007.1
+    }
   },
   {
     "atomic-number": 81,
@@ -899,7 +1288,12 @@
     "group": 13,
     "type": "Basic metal",
     "melting-point": 577,
-    "boiling-point": 1746
+    "boiling-point": 1746,
+    "electronegativity": 1.62,
+    "electron-configuration": "6s^2 4f^14 5d^10 6p^1",
+    "ionization-energies": {
+      "first": 589.4
+    }
   },
   {
     "atomic-number": 82,
@@ -910,7 +1304,12 @@
     "group": 14,
     "type": "Basic metal",
     "melting-point": 600.61,
-    "boiling-point": 2022
+    "boiling-point": 2022,
+    "electronegativity": 1.87,
+    "electron-configuration": "6s^2 4f^14 5d^10 6p^2",
+    "ionization-energies": {
+      "first": 715.6
+    }
   },
   {
     "atomic-number": 83,
@@ -921,7 +1320,12 @@
     "group": 15,
     "type": "Basic metal",
     "melting-point": 544.7,
-    "boiling-point": 1837
+    "boiling-point": 1837,
+    "electronegativity": 2.02,
+    "electron-configuration": "6s^2 4f^14 5d^10 6p^3",
+    "ionization-energies": {
+      "first": 703.0
+    }
   },
   {
     "atomic-number": 84,
@@ -932,7 +1336,12 @@
     "group": 16,
     "type": "Basic metal",
     "melting-point": 527,
-    "boiling-point": 1235
+    "boiling-point": 1235,
+    "electronegativity": 2.0,
+    "electron-configuration": "6s^2 4f^14 5d^10 6p^4",
+    "ionization-energies": {
+      "first": 812.1
+    }
   },
   {
     "atomic-number": 85,
@@ -943,7 +1352,12 @@
     "group": 17,
     "type": "Semimetal",
     "melting-point": 575,
-    "boiling-point": 610
+    "boiling-point": 610,
+    "electronegativity": 2.2,
+    "electron-configuration": "6s^2 4f^14 5d^10 6p^5",
+    "ionization-energies": {
+      "first": "899.003"
+    }
   },
   {
     "atomic-number": 86,
@@ -954,7 +1368,12 @@
     "group": 18,
     "type": "Noble gas",
     "melting-point": 202,
-    "boiling-point": 211.3
+    "boiling-point": 211.3,
+    "electronegativity": 2.2,
+    "electron-configuration": "6s^2 4f^14 5d^10 6p^6",
+    "ionization-energies": {
+      "first": 1037.0
+    }
   },
   {
     "atomic-number": 87,
@@ -965,7 +1384,12 @@
     "group": 1,
     "type": "Alkali metal",
     "melting-point": 300,
-    "boiling-point": 950
+    "boiling-point": 950,
+    "electronegativity": 0.7,
+    "electron-configuration": "7s^1",
+    "ionization-energies": {
+      "first": 380.0
+    }
   },
   {
     "atomic-number": 88,
@@ -976,7 +1400,12 @@
     "group": 2,
     "type": "Alkali earth metal",
     "melting-point": 973,
-    "boiling-point": 2010
+    "boiling-point": 2010,
+    "electronegativity": 0.9,
+    "electron-configuration": "7s^2",
+    "ionization-energies": {
+      "first": 509.3
+    }
   },
   {
     "atomic-number": 89,
@@ -987,7 +1416,12 @@
     "group": null,
     "type": "Actinoid",
     "melting-point": 1323,
-    "boiling-point": 3471
+    "boiling-point": 3471,
+    "electronegativity": 1.1,
+    "electron-configuration": "7s^2 6d^1",
+    "ionization-energies": {
+      "first": 499.0
+    }
   },
   {
     "atomic-number": 90,
@@ -998,7 +1432,12 @@
     "group": null,
     "type": "Actinoid",
     "melting-point": 2115,
-    "boiling-point": 5061
+    "boiling-point": 5061,
+    "electronegativity": 1.3,
+    "electron-configuration": "7s^2 6d^2",
+    "ionization-energies": {
+      "first": 587
+    }
   },
   {
     "atomic-number": 91,
@@ -1009,7 +1448,12 @@
     "group": null,
     "type": "Actinoid",
     "melting-point": 1841,
-    "boiling-point": 4300
+    "boiling-point": 4300,
+    "electronegativity": 1.5,
+    "electron-configuration": "7s^2 5f^2 6d^1",
+    "ionization-energies": {
+      "first": 568
+    }
   },
   {
     "atomic-number": 92,
@@ -1020,7 +1464,12 @@
     "group": null,
     "type": "Actinoid",
     "melting-point": 1405.3,
-    "boiling-point": 4404
+    "boiling-point": 4404,
+    "electronegativity": 1.38,
+    "electron-configuration": "7s^2 5f^3 6d^1",
+    "ionization-energies": {
+      "first": 597.6
+    }
   },
   {
     "atomic-number": 93,
@@ -1031,7 +1480,12 @@
     "group": null,
     "type": "Actinoid",
     "melting-point": 917,
-    "boiling-point": 4273
+    "boiling-point": 4273,
+    "electronegativity": 1.36,
+    "electron-configuration": "7s^2 5f^4 6d^1",
+    "ionization-energies": {
+      "first": 604.5
+    }
   },
   {
     "atomic-number": 94,
@@ -1042,7 +1496,12 @@
     "group": null,
     "type": "Actinoid",
     "melting-point": 912.5,
-    "boiling-point": 3501
+    "boiling-point": 3501,
+    "electronegativity": 1.28,
+    "electron-configuration": "7s^2 5f^6",
+    "ionization-energies": {
+      "first": 584.7
+    }
   },
   {
     "atomic-number": 95,
@@ -1053,7 +1512,12 @@
     "group": null,
     "type": "Actinoid",
     "melting-point": 1449,
-    "boiling-point": 2880
+    "boiling-point": 2880,
+    "electronegativity": 1.13,
+    "electron-configuration": "7s^2 5f^7",
+    "ionization-energies": {
+      "first": 578.0
+    }
   },
   {
     "atomic-number": 96,
@@ -1064,7 +1528,12 @@
     "group": null,
     "type": "Actinoid",
     "melting-point": 1613,
-    "boiling-point": 3383
+    "boiling-point": 3383,
+    "electronegativity": 1.28,
+    "electron-configuration": "7s^2 5f^7 6d^1",
+    "ionization-energies": {
+      "first": 581.0
+    }
   },
   {
     "atomic-number": 97,
@@ -1075,7 +1544,12 @@
     "group": null,
     "type": "Actinoid",
     "melting-point": 1259,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": 1.3,
+    "electron-configuration": "7s^2 5f^8 6d^1",
+    "ionization-energies": {
+      "first": 601.0
+    }
   },
   {
     "atomic-number": 98,
@@ -1086,7 +1560,12 @@
     "group": null,
     "type": "Actinoid",
     "melting-point": 1173,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": 1.3,
+    "electron-configuration": "7s^2 5f^10",
+    "ionization-energies": {
+      "first": 608.0
+    }
   },
   {
     "atomic-number": 99,
@@ -1097,7 +1576,12 @@
     "group": null,
     "type": "Actinoid",
     "melting-point": 1133,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": 1.3,
+    "electron-configuration": "7s^2 5f^11",
+    "ionization-energies": {
+      "first": 619
+    }
   },
   {
     "atomic-number": 100,
@@ -1108,7 +1592,12 @@
     "group": null,
     "type": "Actinoid",
     "melting-point": 1800,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": 1.3,
+    "electron-configuration": "7s^2 5f^12",
+    "ionization-energies": {
+      "first": 627
+    }
   },
   {
     "atomic-number": 101,
@@ -1119,7 +1608,12 @@
     "group": null,
     "type": "Actinoid",
     "melting-point": 1100,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": 1.3,
+    "electron-configuration": "7s^2 5f^13",
+    "ionization-energies": {
+      "first": 635
+    }
   },
   {
     "atomic-number": 102,
@@ -1130,7 +1624,12 @@
     "group": null,
     "type": "Actinoid",
     "melting-point": 1100,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": 1.3,
+    "electron-configuration": "7s^2 5f^14",
+    "ionization-energies": {
+      "first": 642
+    }
   },
   {
     "atomic-number": 103,
@@ -1141,7 +1640,12 @@
     "group": null,
     "type": "Actinoid",
     "melting-point": 1900,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": 1.3,
+    "electron-configuration": "7s^2 5f^14 6d^1",
+    "ionization-energies": {
+      "first": 470.0
+    }
   },
   {
     "atomic-number": 104,
@@ -1152,7 +1656,12 @@
     "group": 4,
     "type": "Transition metal",
     "melting-point": null,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": "",
+    "electron-configuration": "7s^2 5f^14 6d^2",
+    "ionization-energies": {
+      "first": 580
+    }
   },
   {
     "atomic-number": 105,
@@ -1163,7 +1672,12 @@
     "group": 5,
     "type": "Transition metal",
     "melting-point": null,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": "",
+    "electron-configuration": "7s^2 5f^14 6d^3",
+    "ionization-energies": {
+      "first": ""
+    }
   },
   {
     "atomic-number": 106,
@@ -1174,7 +1688,12 @@
     "group": 6,
     "type": "Transition metal",
     "melting-point": null,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": "",
+    "electron-configuration": "7s^2 5f^14 6d^4",
+    "ionization-energies": {
+      "first": ""
+    }
   },
   {
     "atomic-number": 107,
@@ -1185,7 +1704,12 @@
     "group": 7,
     "type": "Transition metal",
     "melting-point": null,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": "",
+    "electron-configuration": "7s^2 5f^14 6d^5",
+    "ionization-energies": {
+      "first": ""
+    }
   },
   {
     "atomic-number": 108,
@@ -1196,7 +1720,12 @@
     "group": 8,
     "type": "Transition metal",
     "melting-point": null,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": "",
+    "electron-configuration": "7s^2 5f^14 6d^6",
+    "ionization-energies": {
+      "first": ""
+    }
   },
   {
     "atomic-number": 109,
@@ -1207,7 +1736,12 @@
     "group": 9,
     "type": "Transition metal",
     "melting-point": null,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": "",
+    "electron-configuration": "7s^2 5f^14 6d^7",
+    "ionization-energies": {
+      "first": ""
+    }
   },
   {
     "atomic-number": 110,
@@ -1218,7 +1752,12 @@
     "group": 10,
     "type": "Transition metal",
     "melting-point": null,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": "",
+    "electron-configuration": "7s^2 5f^14 6d^8",
+    "ionization-energies": {
+      "first": ""
+    }
   },
   {
     "atomic-number": 111,
@@ -1229,7 +1768,12 @@
     "group": 11,
     "type": "Transition metal",
     "melting-point": null,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": "",
+    "electron-configuration": "7s^2 5f^14 6d^9",
+    "ionization-energies": {
+      "first": ""
+    }
   },
   {
     "atomic-number": 112,
@@ -1240,7 +1784,12 @@
     "group": 12,
     "type": "Transition metal",
     "melting-point": null,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": "",
+    "electron-configuration": "7s^2 5f^14 6d^10",
+    "ionization-energies": {
+      "first": ""
+    }
   },
   {
     "atomic-number": 113,
@@ -1251,7 +1800,12 @@
     "group": 13,
     "type": "Basic metal",
     "melting-point": null,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": "",
+    "electron-configuration": "",
+    "ionization-energies": {
+      "first": ""
+    }
   },
   {
     "atomic-number": 114,
@@ -1262,7 +1816,12 @@
     "group": 14,
     "type": "Basic metal",
     "melting-point": null,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": "",
+    "electron-configuration": "",
+    "ionization-energies": {
+      "first": ""
+    }
   },
   {
     "atomic-number": 115,
@@ -1273,7 +1832,12 @@
     "group": 15,
     "type": "Basic metal",
     "melting-point": null,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": "",
+    "electron-configuration": "",
+    "ionization-energies": {
+      "first": ""
+    }
   },
   {
     "atomic-number": 116,
@@ -1284,7 +1848,12 @@
     "group": 16,
     "type": "Basic metal",
     "melting-point": null,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": "",
+    "electron-configuration": "",
+    "ionization-energies": {
+      "first": ""
+    }
   },
   {
     "atomic-number": 117,
@@ -1295,7 +1864,12 @@
     "group": 17,
     "type": "Basic Metal",
     "melting-point": null,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": "",
+    "electron-configuration": "",
+    "ionization-energies": {
+      "first": ""
+    }
   },
   {
     "atomic-number": 118,
@@ -1306,6 +1880,11 @@
     "group": 18,
     "type": "Noble gas",
     "melting-point": null,
-    "boiling-point": null
+    "boiling-point": null,
+    "electronegativity": "",
+    "electron-configuration": "",
+    "ionization-energies": {
+      "first": ""
+    }
   }
 ]

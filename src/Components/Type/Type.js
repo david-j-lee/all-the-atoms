@@ -1,29 +1,36 @@
 import React from "react";
 import "./Type.css";
 
-export default class Types extends React.Component {
+// redux
+import { connect } from "react-redux";
+import { searchElements } from "../../Actions/ptableAction";
+import { Typography } from "@material-ui/core";
+
+export class Type extends React.Component {
   constructor(props) {
     super(props);
 
-    this.searchByType = this.searchByType.bind(this);
-    
-    this.state = {
-      isActive: this.props.isActive
-    };
+    this.state = { isActive: false };
+    this.searchTerm = `type: ${this.props.type["name-plural"]}`;
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ isActive: nextProps.isActive });
+    if (nextProps.search !== this.searchTerm) {
+      this.setState({ isActive: false });
+    } else {
+      this.setState({ isActive: true });
+    }
   }
 
   searchByType = () => {
     if (this.state.isActive) {
-      this.props.requestUpdateSearchInput("");
+      this.props.searchElements("");
+      this.setState({ isActive: false });
     } else {
-      var term = `type:${this.props.type["name-plural"]}`;
-      this.props.requestUpdateSearchInput(term);
+      this.props.searchElements(this.searchTerm);
+      this.setState({ isActive: true });
     }
-  };
+  }
 
   render() {
     var type = this.props.type;
@@ -31,19 +38,29 @@ export default class Types extends React.Component {
       <button
         className={`legend-item ${type["name-plural"]
           .replace(/\s+/g, "-")
-          .toLowerCase()}-bg`}
+          .toLowerCase()}-bg ${this.state.isActive ? "active" : "inactive"}`}
         onClick={this.searchByType}
       >
         <div
           className={`legend-item-content ${type["name-plural"]
             .replace(/\s+/g, "-")
-            .toLowerCase()}-border-bottom ${
-            this.state.isActive ? "active" : "inactive"
-          }`}
+            .toLowerCase()}-border-bottom`}
         >
-          {type["name-plural"]}
+          <Typography>{type["name-plural"]}</Typography>
         </div>
       </button>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    search: state.ptable.search
+  };
+};
+
+const mapDispatchToProps = {
+  searchElements
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Type);

@@ -1,13 +1,17 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 import "./PTable.css";
 
-// import Logo from "../Icons/Logo/Logo";
-// import elementData from "../../Data/elements.json";
+// redux
+import { connect } from "react-redux";
+
+// data
 import gridMapData from "../../Data/grid-map.json";
 import groupData from "../../Data/groups.json";
 import periodData from "../../Data/periods.json";
 import typeData from "../../Data/types.json";
 
+// components
 import Element from "../Element/Element";
 import Empty from "../Empty/Empty";
 import Group from "../Group/Group";
@@ -15,107 +19,133 @@ import Period from "../Period/Period";
 import Placeholder from "../Placeholder/Placeholder";
 import Type from "../Type/Type";
 
-export default class PTable extends React.Component {
+export class PTable extends React.Component {
   constructor(props) {
     super(props);
 
-    this.generateTiles = this.generateTiles.bind(this);
-    this.getLegend = this.getLegend.bind(this);
-    this.requestUpdateSearchInput = this.requestUpdateSearchInput.bind(this);
-
     this.state = {
-      elementData: [],
-      elements: [],
-      legend: []
+      Tiles: [],
+      Types: []
     };
   }
 
   componentWillMount() {
-    this.props.requestFilterElements();
+    this.generateTiles(this.props.elements, "");
+    this.generateTypes();
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ elementData: nextProps.elementData }, () => {
-      this.generateTiles();
-    });
+    this.generateTiles(nextProps.elements, nextProps.search);
   }
 
-  generateTiles(term) {
-    let Elements = gridMapData.map((a, i) => {
-      if (typeof a === "number") {
-        var element = this.state.elementData.find(
-          e => e["atomic-number"] === a
+  generateTiles = (elements, search) => {
+    let Tiles = gridMapData.map((map, index) => {
+      const type = this.getTileType(map);
+      return this.generateTile(index, type, map, elements, search);
+    });
+    this.setState({ Tiles: Tiles });
+  }
+
+  getTileType(map) {
+    let type = "empty";
+    if (typeof map === "number") {
+      type = "element";
+    } else if (typeof map === "string") {
+      if (map === "") {
+        type = "empty";
+      } else if (map.indexOf("g") !== -1) {
+        type = "group";
+      } else if (map.indexOf("p") !== -1) {
+        type = "period";
+      } else if (map === "l" || map === "a") {
+        type = "placeholder";
+      }
+    }
+    return type;
+  }
+
+  generateTile(index, type, map, elements, search) {
+    switch (type) {
+      case "element":
+        const element = this.getElement(elements, map);
+        return <Element key={index} element={{ ...element }} />;
+      case "group":
+        return <Group key={index} group={this.getGroup(map)} />;
+      case "period":
+        return <Period key={index} period={this.getPeriod(map)} />;
+      case "placeholder":
+        return (
+          <Placeholder
+            key={index}
+            type={map}
+            isActive={this.getPlaceholderStatus(map, search)}
+          />
         );
-        if (element !== undefined) {
-          return <Element key={i} theme={this.props.theme} element={element} />;
-        }
-      } else if (typeof a === "string") {
-        if (a === "") {
-          return <Empty key={i} />;
-        } else if (a.indexOf("g") !== -1) {
-          var group = groupData.find(
-            g => g.number.toString() === a.replace("g", "")
-          );
-          return <Group key={i} group={group} />;
-        } else if (a.indexOf("p") !== -1) {
-          var period = periodData.find(
-            p => p.number.toString() === a.replace("p", "")
-          );
-          return <Period key={i} period={period} />;
-        } else if (a === "l" || a === "a") {
-          return (
-            <Placeholder
-              key={i}
-              type={a}
-              isActive={
-                term === undefined || term === "" || term === null
-                  ? true
-                  : false
-              }
-            />
-          );
+      default:
+        return <Empty key={index} />;
+    }
+  }
+
+  getElement(elements, map) {
+    return elements.find(e => e["atomic-number"] === map);
+  }
+
+  getGroup(map) {
+    return groupData.find(g => g.number.toString() === map.replace("g", ""));
+  }
+
+  getPeriod(map) {
+    return periodData.find(p => p.number.toString() === map.replace("p", ""));
+  }
+
+  getPlaceholderStatus(map, search) {
+    if (search) {
+      const terms = search.toLowerCase().split(":");
+      if (terms[0] === "type") {
+        switch (map) {
+          case "l":
+            return terms[1].trim().indexOf("lanthanoid") !== -1;
+          case "a":
+            return terms[1].trim().indexOf("actinoid") !== -1;
+          default:
+            return false;
         }
       }
-      return <Empty key={i} />;
-    });
-    this.setState({ elements: Elements });
-  }
-
-  getLegend(type) {
-    if (type) {
-      type = type.toLowerCase();
+    } else {
+      return true;
     }
-    let Types = typeData.map((a, i) => {
-      var isActive =
-        `type:${a["name-singular"].toLowerCase()}` === type ||
-        `type:${a["name-plural"].toLowerCase()}` === type
-          ? true
-          : false;
-      return (
-        <Type
-          key={i}
-          type={a}
-          isActive={isActive}
-          requestUpdateSearchInput={this.requestUpdateSearchInput}
-        />
-      );
-    });
-    this.setState({ legend: Types });
   }
 
-  requestUpdateSearchInput(value) {
-    this.props.requestUpdateSearchInput(value);
-    this.props.requestUpdateSearchTerm(value);
+  generateTypes = () => {
+    let Types = typeData.map((a, i) => {
+      return <Type key={i} type={a} />;
+    });
+    this.setState({ Types: Types });
   }
 
   render() {
     return (
-      <div className="p-table-container">
-        <div className="p-table">
-          <div className="p-table-items">{this.state.elements}</div>
+      <div className="content container-fluid mt-3">
+        <div className="p-table-container">
+          <div className="p-table">
+            <div className="p-table-items">{this.state.Tiles}</div>
+          </div>
+          <div className="legend">{this.state.Types}</div>
         </div>
-        <div className="legend">{this.state.legend}</div>
       </div>
     );
   }
 }
+
+PTable.propTypes = {
+  elements: PropTypes.array
+};
+
+const mapStateToProps = state => {
+  return {
+    elements: state.ptable.elements,
+    search: state.ptable.search
+  };
+};
+
+export default connect(mapStateToProps, null)(PTable);

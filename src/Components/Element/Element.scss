@@ -5,6 +5,9 @@
   padding: 0;
   margin: 0;
   border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .element-container .active {
@@ -19,6 +22,7 @@
   margin: 1px;
   padding: 4px;
   cursor: pointer;
+  flex-grow: 1;
 }
 .element-info {
   text-align: center;
@@ -45,6 +49,20 @@
   background-color: transparent !important;
 }
 
+.popover-body {
+  padding: 0 !important;
+}
+
+.dark .arrow::after {
+  border-left-color: #424242 !important;
+  border-right-color: #424242 !important;
+}
+
+.light .arrow::after {
+  border-left-color: #fff !important;
+  border-right-color: #fff !important;
+}
+
 .atomic-number {
   text-align: left;
   font-size: 8pt;
@@ -56,8 +74,11 @@
 .atomic-name {
   font-size: 9pt;
 }
-.atomic-mass {
+.display-value {
   font-size: 9pt;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .popover {
@@ -74,4 +95,9 @@
 }
 .fa-cloud {
   color: $gas-color;
+}
+
+.header {
+  width: 125px;
+  padding-right: 1rem !important;
 }
