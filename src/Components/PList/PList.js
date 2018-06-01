@@ -153,7 +153,7 @@ export class PList extends React.Component {
                       <TableCell numeric padding="dense">
                         {e["boiling-point"]}
                       </TableCell>
-                      <TableCell numeric padding="dense">
+                      <TableCell padding="dense">
                         {e.state}
                       </TableCell>
                     </TableRow>
