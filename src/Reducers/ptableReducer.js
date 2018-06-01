@@ -185,18 +185,20 @@ function setElementalStates(elements, temp, unit) {
     if (temp === undefined || temp === "") {
       element.state = undefined;
     } else {
-      if (
-        !element["melting-point"] ||
-        parseFloat(temp) < parseFloat(element["melting-point"])
-      ) {
-        element.state = "solid";
-      } else if (
-        !element["boiling-point"] ||
-        parseFloat(temp) < parseFloat(element["boiling-point"])
-      ) {
-        element.state = "liquid";
-      } else {
-        element.state = "gas";
+      if (element["melting-point"] || element["boiling-point"]) {
+        if (
+          !element["melting-point"] ||
+          parseFloat(temp) < parseFloat(element["melting-point"])
+        ) {
+          element.state = "solid";
+        } else if (
+          !element["boiling-point"] ||
+          parseFloat(temp) < parseFloat(element["boiling-point"])
+        ) {
+          element.state = "liquid";
+        } else {
+          element.state = "gas";
+        }
       }
     }
 

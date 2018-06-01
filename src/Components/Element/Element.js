@@ -85,6 +85,36 @@ export class Element extends React.Component {
       State = <FontAwesomeIcon icon={icon} size="xs" />;
     }
 
+    let Points = "";
+    if (element["melting-point"] || element["boiling-point"]) {
+      Points = (
+        <div className="container-fluid my-3">
+          <div className="row text-center">
+            <div className="col-md-6 nowrap">
+              <FontAwesomeIcon
+                icon="tint"
+                size="xs"
+                className={`${normalizedType}-text`}
+              />{" "}
+              <span className="">
+                <Typography>{element["melting-point-converted"]}</Typography>
+              </span>
+            </div>
+            <div className="col-md-6 nowrap">
+              <FontAwesomeIcon
+                icon="cloud"
+                size="xs"
+                className={`${normalizedType}-text`}
+              />{" "}
+              <span className="">
+                <Typography>{element["boiling-point-converted"]}</Typography>
+              </span>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <button
         className="element-container"
@@ -160,34 +190,7 @@ export class Element extends React.Component {
                   </tr>
                 </tbody>
               </table>
-              <div className="container-fluid my-3">
-                <div className="row text-center">
-                  <div className="col-md-6 nowrap">
-                    <FontAwesomeIcon
-                      icon="tint"
-                      size="xs"
-                      className={`${normalizedType}-text`}
-                    />{" "}
-                    <span className="">
-                      <Typography>
-                        {element["melting-point-converted"]}
-                      </Typography>
-                    </span>
-                  </div>
-                  <div className="col-md-6 nowrap">
-                    <FontAwesomeIcon
-                      icon="cloud"
-                      size="xs"
-                      className={`${normalizedType}-text`}
-                    />{" "}
-                    <span className="">
-                      <Typography>
-                        {element["boiling-point-converted"]}
-                      </Typography>
-                    </span>
-                  </div>
-                </div>
-              </div>
+              {Points}
             </Paper>
           </PopoverBody>
         </Popover>
