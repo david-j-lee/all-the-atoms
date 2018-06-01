@@ -46,7 +46,7 @@ export const setElementalState = temp => dispatch => {
 
 export const getTheme = () => dispatch => {
   let theme = localStorage.getItem("theme");
-  if (!theme) {
+  if (!theme || theme.palette === undefined) {
     theme = {
       palette: {
         type: "light",

@@ -37,6 +37,10 @@ export default function(state = initialState, action) {
       };
     case GET_ELEMENTS:
       let tempUnit = localStorage.getItem("tempUnit");
+      if (tempUnit === null) {
+        localStorage.setItem("tempUnit", "k");
+        tempUnit = "k";
+      }
       return {
         ...state,
         elements: setupElements(action.payload, state.displayValue, tempUnit),
@@ -94,6 +98,7 @@ function setupElements(elements, displayValue, unit) {
   if (!displayValue || displayValue === "") {
     displayValue = "atomic-mass";
   }
+
   elements.forEach(element => {
     element.isActive = true;
 
@@ -284,7 +289,7 @@ function convertFahrenheitToKelvin(fahrenheit) {
 }
 
 function convertToKelvin(kelvin, unit) {
-  if (kelvin === "") {
+  if (!unit || !kelvin || kelvin === "") {
     return "";
   } else {
     switch (unit) {
