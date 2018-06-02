@@ -46,7 +46,10 @@ export const setElementalState = temp => dispatch => {
 
 export const getTheme = () => dispatch => {
   let theme = localStorage.getItem("theme");
-  if (!theme || theme.palette === undefined) {
+  try {
+    theme = JSON.parse(theme);
+    const palette = theme.palette.type; // to trigger error if using old settings
+  } catch (e) {
     theme = {
       palette: {
         type: "light",
@@ -57,8 +60,8 @@ export const getTheme = () => dispatch => {
       }
     };
     localStorage.setItem("theme", JSON.stringify(theme));
-  } else {
-    theme = JSON.parse(theme);
+  }
+  if (!theme || theme.palette === undefined) {
   }
   dispatch({
     type: GET_THEME,
