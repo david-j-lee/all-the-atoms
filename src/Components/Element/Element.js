@@ -29,7 +29,9 @@ export class Element extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ displayValueText: nextProps.displayValueText });
+    if (this.state.displayValueText !== nextProps.displayValueText) {
+      this.setState({ displayValueText: nextProps.displayValueText });
+    }
   }
 
   togglePopover = () => {

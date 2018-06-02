@@ -59,8 +59,10 @@ export class ThemePicker extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ theme: nextProps.theme });
-    this.updateButton(nextProps.theme.palette.type);
+    if (this.state.theme !== nextProps.theme) {
+      this.setState({ theme: nextProps.theme });
+      this.updateButton(nextProps.theme.palette.type);
+    }
   }
 
   changeType = () => {

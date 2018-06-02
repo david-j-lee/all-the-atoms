@@ -32,7 +32,10 @@ export class Main extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ theme: nextProps.theme });
+    console.log(this.state.theme !== nextProps.theme)
+    if (this.state.theme !== nextProps.theme) {
+      this.setState({ theme: nextProps.theme });
+    }
   }
 
   render() {

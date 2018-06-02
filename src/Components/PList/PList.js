@@ -29,7 +29,9 @@ export class PList extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ elements: nextProps.elements });
+    if (this.state.elements !== nextProps.elements) {
+      this.setState({ elements: nextProps.elements });
+    }
   }
 
   handleRequestSort = id => {

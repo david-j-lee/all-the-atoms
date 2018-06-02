@@ -53,10 +53,18 @@ export class Sidebar extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ search: nextProps.search });
-    this.setState({ temperature: nextProps.temperature });
-    this.setState({ temperatureUnit: nextProps.temperatureUnit });
-    this.setState({ menuMobileOpen: nextProps.menuMobileOpen });
+    if (this.state.search !== nextProps.search) {
+      this.setState({ search: nextProps.search });
+    }
+    if (this.state.temperature !== nextProps.temperature) {
+      this.setState({ temperature: nextProps.temperature });
+    }
+    if (this.state.temperatureUnit !== nextProps.temperatureUnit) {
+      this.setState({ temperatureUnit: nextProps.temperatureUnit });
+    }
+    if (this.state.menuMobileOpen !== nextProps.menuMobileOpen) {
+      this.setState({ menuMobileOpen: nextProps.menuMobileOpen });
+    }
   }
 
   toggleMenu = () => {

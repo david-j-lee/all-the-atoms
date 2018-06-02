@@ -10,8 +10,14 @@ export default class Placeholder extends React.Component {
     };
   }
 
+  componentWillMount() {
+    this.setState({ isActive: this.props.isActive });
+  }
+
   componentWillReceiveProps(nextProps) {
-    this.setState({ isActive: nextProps.isActive });
+    if (this.state.isActive !== nextProps.isActive) {
+      this.setState({ isActive: nextProps.isActive });
+    }
   }
 
   render() {

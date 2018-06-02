@@ -10,16 +10,19 @@ export class Type extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { isActive: false };
+    this.state = {
+      isActive: false
+    };
+
     this.searchTerm = `type: ${this.props.type["name-plural"]}`;
   }
 
+  componentWillMount() {
+    this.getStatus(this.props.search);
+  }
+
   componentWillReceiveProps(nextProps) {
-    if (nextProps.search !== this.searchTerm) {
-      this.setState({ isActive: false });
-    } else {
-      this.setState({ isActive: true });
-    }
+    this.getStatus(nextProps.search);
   }
 
   searchByType = () => {
@@ -28,6 +31,14 @@ export class Type extends React.Component {
       this.setState({ isActive: false });
     } else {
       this.props.searchElements(this.searchTerm);
+      this.setState({ isActive: true });
+    }
+  };
+
+  getStatus(search) {
+    if (search.toLowerCase() !== this.searchTerm.toLowerCase()) {
+      this.setState({ isActive: false });
+    } else {
       this.setState({ isActive: true });
     }
   }

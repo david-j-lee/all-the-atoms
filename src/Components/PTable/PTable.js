@@ -30,7 +30,7 @@ export class PTable extends React.Component {
   }
 
   componentWillMount() {
-    this.generateTiles(this.props.elements, "");
+    this.generateTiles(this.props.elements, this.props.search);
     this.generateTypes();
   }
 
@@ -44,7 +44,7 @@ export class PTable extends React.Component {
       return this.generateTile(index, type, map, elements, search);
     });
     this.setState({ Tiles: Tiles });
-  }
+  };
 
   getTileType(map) {
     let type = "empty";
@@ -121,7 +121,7 @@ export class PTable extends React.Component {
       return <Type key={i} type={a} />;
     });
     this.setState({ Types: Types });
-  }
+  };
 
   render() {
     return (

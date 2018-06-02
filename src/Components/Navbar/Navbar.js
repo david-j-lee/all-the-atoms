@@ -25,7 +25,9 @@ export class Navbar extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ menuMobileOpen: nextProps.menuMobileOpen });
+    if (this.state.menuMobileOpen !== nextProps.menuMobileOpen) {
+      this.setState({ menuMobileOpen: nextProps.menuMobileOpen });
+    }
   }
 
   toggleMenu = () => {
