@@ -490,7 +490,7 @@
     "melting-point": 302.9146,
     "boiling-point": 2477,
     "electronegativity": 1.81,
-    "electron-configuration": "4s^2 3d^10 4p^1",
+    "electron-configuration": "4s^2 4p^1",
     "ionization-energies": {
       "first": 578.8
     }
@@ -506,7 +506,7 @@
     "melting-point": 1211.4,
     "boiling-point": 3106,
     "electronegativity": 2.01,
-    "electron-configuration": "4s^2 3d^10 4p^2",
+    "electron-configuration": "4s^2 4p^2",
     "ionization-energies": {
       "first": 762.0
     }
@@ -522,7 +522,7 @@
     "melting-point": 1090,
     "boiling-point": 887,
     "electronegativity": 2.18,
-    "electron-configuration": "4s^2 3d^10 4p^3",
+    "electron-configuration": "4s^2 4p^3",
     "ionization-energies": {
       "first": 947.0
     }
@@ -538,7 +538,7 @@
     "melting-point": 453,
     "boiling-point": 958,
     "electronegativity": 2.55,
-    "electron-configuration": "4s^2 3d^10 4p^4",
+    "electron-configuration": "4s^2 4p^4",
     "ionization-energies": {
       "first": 941.0
     }
@@ -554,7 +554,7 @@
     "melting-point": 265.8,
     "boiling-point": 332,
     "electronegativity": 2.96,
-    "electron-configuration": "4s^2 3d^10 4p^5",
+    "electron-configuration": "4s^2 4p^5",
     "ionization-energies": {
       "first": 1139.9
     }
@@ -570,7 +570,7 @@
     "melting-point": 115.79,
     "boiling-point": 119.93,
     "electronegativity": 3.0,
-    "electron-configuration": "4s^2 3d^10 4p^6",
+    "electron-configuration": "4s^2 4p^6",
     "ionization-energies": {
       "first": 1350.8
     }
@@ -682,7 +682,7 @@
     "melting-point": 2430,
     "boiling-point": 4538,
     "electronegativity": 1.9,
-    "electron-configuration": "5s^1 4d^6",
+    "electron-configuration": "5s^2 4d^5",
     "ionization-energies": {
       "first": 702
     }
@@ -778,7 +778,7 @@
     "melting-point": 429.75,
     "boiling-point": 2345,
     "electronegativity": 1.78,
-    "electron-configuration": "5s^2 4d^10 5p^1",
+    "electron-configuration": "5s^2 5p^1",
     "ionization-energies": {
       "first": 558.3
     }
@@ -794,7 +794,7 @@
     "melting-point": 505.08,
     "boiling-point": 2875,
     "electronegativity": 1.96,
-    "electron-configuration": "5s^2 4d^10 5p^2",
+    "electron-configuration": "5s^2 5p^2",
     "ionization-energies": {
       "first": 708.6
     }
@@ -810,7 +810,7 @@
     "melting-point": 903.78,
     "boiling-point": 1860,
     "electronegativity": 2.05,
-    "electron-configuration": "5s^2 4d^10 5p^3",
+    "electron-configuration": "5s^2 5p^3",
     "ionization-energies": {
       "first": 834.0
     }
@@ -826,7 +826,7 @@
     "melting-point": 722.66,
     "boiling-point": 1261,
     "electronegativity": 2.1,
-    "electron-configuration": "5s^2 4d^10 5p^4",
+    "electron-configuration": "5s^2 5p^4",
     "ionization-energies": {
       "first": 869.3
     }
@@ -842,7 +842,7 @@
     "melting-point": 386.85,
     "boiling-point": 457.4,
     "electronegativity": 2.66,
-    "electron-configuration": "5s^2 4d^10 5p^5",
+    "electron-configuration": "5s^2 5p^5",
     "ionization-energies": {
       "first": 1008.4
     }
@@ -858,7 +858,7 @@
     "melting-point": 161.4,
     "boiling-point": 165.03,
     "electronegativity": 2.6,
-    "electron-configuration": "5s^2 4d^10 5p^6",
+    "electron-configuration": "5s^2 5p^6",
     "ionization-energies": {
       "first": 1170.4
     }
@@ -922,7 +922,7 @@
     "melting-point": 1068,
     "boiling-point": 3716,
     "electronegativity": 1.12,
-    "electron-configuration": "6s^2 4f^2",
+    "electron-configuration": "6s^2 4f^1 5d^1",
     "ionization-energies": {
       "first": 534.4
     }
@@ -1146,7 +1146,7 @@
     "melting-point": 2506,
     "boiling-point": 4876,
     "electronegativity": 1.3,
-    "electron-configuration": "6s^2 4f^14 5d^2",
+    "electron-configuration": "6s^2 5d^2",
     "ionization-energies": {
       "first": 658.5
     }
@@ -1162,7 +1162,7 @@
     "melting-point": 3290,
     "boiling-point": 5731,
     "electronegativity": 1.5,
-    "electron-configuration": "6s^2 4f^14 5d^3",
+    "electron-configuration": "6s^2 5d^3",
     "ionization-energies": {
       "first": 761.0
     }
@@ -1178,7 +1178,7 @@
     "melting-point": 3695,
     "boiling-point": 5828,
     "electronegativity": 2.36,
-    "electron-configuration": "6s^2 4f^14 5d^4",
+    "electron-configuration": "6s^2 5d^4",
     "ionization-energies": {
       "first": 770.0
     }
@@ -1194,7 +1194,7 @@
     "melting-point": 3459,
     "boiling-point": 5869,
     "electronegativity": 1.9,
-    "electron-configuration": "6s^2 4f^14 5d^5",
+    "electron-configuration": "6s^2 5d^5",
     "ionization-energies": {
       "first": 760.0
     }
@@ -1210,7 +1210,7 @@
     "melting-point": 3306,
     "boiling-point": 5285,
     "electronegativity": 2.2,
-    "electron-configuration": "6s^2 4f^14 5d^6",
+    "electron-configuration": "6s^2 5d^6",
     "ionization-energies": {
       "first": 840.0
     }
@@ -1226,7 +1226,7 @@
     "melting-point": 2719,
     "boiling-point": 4701,
     "electronegativity": 2.2,
-    "electron-configuration": "6s^2 4f^14 5d^7",
+    "electron-configuration": "6s^2 5d^7",
     "ionization-energies": {
       "first": 880.0
     }
@@ -1242,7 +1242,7 @@
     "melting-point": 2041.4,
     "boiling-point": 4098,
     "electronegativity": 2.28,
-    "electron-configuration": "6s^1 4f^14 5d^9",
+    "electron-configuration": "6s^1 5d^9",
     "ionization-energies": {
       "first": 870.0
     }
@@ -1258,7 +1258,7 @@
     "melting-point": 1337.33,
     "boiling-point": 3129,
     "electronegativity": 2.54,
-    "electron-configuration": "6s^1 4f^14 5d^10",
+    "electron-configuration": "6s^1 5d^10",
     "ionization-energies": {
       "first": 890.1
     }
@@ -1274,7 +1274,7 @@
     "melting-point": 234.43,
     "boiling-point": 629.88,
     "electronegativity": 2.0,
-    "electron-configuration": "6s^2 4f^14 5d^10",
+    "electron-configuration": "6s^2 5d^10",
     "ionization-energies": {
       "first": 1007.1
     }
@@ -1290,7 +1290,7 @@
     "melting-point": 577,
     "boiling-point": 1746,
     "electronegativity": 1.62,
-    "electron-configuration": "6s^2 4f^14 5d^10 6p^1",
+    "electron-configuration": "6s^2 6p^1",
     "ionization-energies": {
       "first": 589.4
     }
@@ -1306,7 +1306,7 @@
     "melting-point": 600.61,
     "boiling-point": 2022,
     "electronegativity": 1.87,
-    "electron-configuration": "6s^2 4f^14 5d^10 6p^2",
+    "electron-configuration": "6s^2 6p^2",
     "ionization-energies": {
       "first": 715.6
     }
@@ -1322,7 +1322,7 @@
     "melting-point": 544.7,
     "boiling-point": 1837,
     "electronegativity": 2.02,
-    "electron-configuration": "6s^2 4f^14 5d^10 6p^3",
+    "electron-configuration": "6s^2 6p^3",
     "ionization-energies": {
       "first": 703.0
     }
@@ -1338,7 +1338,7 @@
     "melting-point": 527,
     "boiling-point": 1235,
     "electronegativity": 2.0,
-    "electron-configuration": "6s^2 4f^14 5d^10 6p^4",
+    "electron-configuration": "6s^2 6p^4",
     "ionization-energies": {
       "first": 812.1
     }
@@ -1354,9 +1354,9 @@
     "melting-point": 575,
     "boiling-point": 610,
     "electronegativity": 2.2,
-    "electron-configuration": "6s^2 4f^14 5d^10 6p^5",
+    "electron-configuration": "6s^2 6p^5",
     "ionization-energies": {
-      "first": "899.003"
+      "first": 890
     }
   },
   {
@@ -1370,7 +1370,7 @@
     "melting-point": 202,
     "boiling-point": 211.3,
     "electronegativity": 2.2,
-    "electron-configuration": "6s^2 4f^14 5d^10 6p^6",
+    "electron-configuration": "6s^2 6p^6",
     "ionization-energies": {
       "first": 1037.0
     }
@@ -1546,7 +1546,7 @@
     "melting-point": 1259,
     "boiling-point": null,
     "electronegativity": 1.3,
-    "electron-configuration": "7s^2 5f^8 6d^1",
+    "electron-configuration": "7s^2 5f^9",
     "ionization-energies": {
       "first": 601.0
     }
@@ -1658,7 +1658,7 @@
     "melting-point": null,
     "boiling-point": null,
     "electronegativity": "",
-    "electron-configuration": "7s^2 5f^14 6d^2",
+    "electron-configuration": "7s^2 6d^2",
     "ionization-energies": {
       "first": 580
     }
@@ -1674,7 +1674,7 @@
     "melting-point": null,
     "boiling-point": null,
     "electronegativity": "",
-    "electron-configuration": "7s^2 5f^14 6d^3",
+    "electron-configuration": "7s^2 6d^3",
     "ionization-energies": {
       "first": ""
     }
@@ -1690,7 +1690,7 @@
     "melting-point": null,
     "boiling-point": null,
     "electronegativity": "",
-    "electron-configuration": "7s^2 5f^14 6d^4",
+    "electron-configuration": "7s^2 6d^4",
     "ionization-energies": {
       "first": ""
     }
@@ -1706,7 +1706,7 @@
     "melting-point": null,
     "boiling-point": null,
     "electronegativity": "",
-    "electron-configuration": "7s^2 5f^14 6d^5",
+    "electron-configuration": "7s^2 6d^5",
     "ionization-energies": {
       "first": ""
     }
@@ -1722,7 +1722,7 @@
     "melting-point": null,
     "boiling-point": null,
     "electronegativity": "",
-    "electron-configuration": "7s^2 5f^14 6d^6",
+    "electron-configuration": "7s^2 6d^6",
     "ionization-energies": {
       "first": ""
     }
@@ -1738,7 +1738,7 @@
     "melting-point": null,
     "boiling-point": null,
     "electronegativity": "",
-    "electron-configuration": "7s^2 5f^14 6d^7",
+    "electron-configuration": "7s^2 6d^7",
     "ionization-energies": {
       "first": ""
     }
@@ -1754,7 +1754,7 @@
     "melting-point": null,
     "boiling-point": null,
     "electronegativity": "",
-    "electron-configuration": "7s^2 5f^14 6d^8",
+    "electron-configuration": "7s^2 6d^8",
     "ionization-energies": {
       "first": ""
     }
@@ -1770,7 +1770,7 @@
     "melting-point": null,
     "boiling-point": null,
     "electronegativity": "",
-    "electron-configuration": "7s^2 5f^14 6d^9",
+    "electron-configuration": "7s^2 6d^9",
     "ionization-energies": {
       "first": ""
     }
@@ -1786,7 +1786,7 @@
     "melting-point": null,
     "boiling-point": null,
     "electronegativity": "",
-    "electron-configuration": "7s^2 5f^14 6d^10",
+    "electron-configuration": "7s^2 6d^10",
     "ionization-energies": {
       "first": ""
     }
@@ -1802,7 +1802,7 @@
     "melting-point": null,
     "boiling-point": null,
     "electronegativity": "",
-    "electron-configuration": "",
+    "electron-configuration": "7s^2 7p^1",
     "ionization-energies": {
       "first": ""
     }
@@ -1818,7 +1818,7 @@
     "melting-point": null,
     "boiling-point": null,
     "electronegativity": "",
-    "electron-configuration": "",
+    "electron-configuration": "7s^2 7p^2",
     "ionization-energies": {
       "first": ""
     }
@@ -1834,7 +1834,7 @@
     "melting-point": null,
     "boiling-point": null,
     "electronegativity": "",
-    "electron-configuration": "",
+    "electron-configuration": "7s^2 7p^3",
     "ionization-energies": {
       "first": ""
     }
@@ -1850,7 +1850,7 @@
     "melting-point": null,
     "boiling-point": null,
     "electronegativity": "",
-    "electron-configuration": "",
+    "electron-configuration": "7s^2 7p^4",
     "ionization-energies": {
       "first": ""
     }
@@ -1866,7 +1866,7 @@
     "melting-point": null,
     "boiling-point": null,
     "electronegativity": "",
-    "electron-configuration": "",
+    "electron-configuration": "7s^2 7p^5",
     "ionization-energies": {
       "first": ""
     }
@@ -1882,7 +1882,7 @@
     "melting-point": null,
     "boiling-point": null,
     "electronegativity": "",
-    "electron-configuration": "",
+    "electron-configuration": "7s^2 7p^6",
     "ionization-energies": {
       "first": ""
     }
