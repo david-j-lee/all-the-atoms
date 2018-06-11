@@ -48,7 +48,9 @@ export const getTheme = () => dispatch => {
   let theme = localStorage.getItem("theme");
   try {
     theme = JSON.parse(theme);
-    const palette = theme.palette.type; // to trigger error if using old settings
+    if (!theme.palette.type) {
+      throw "using old settings";
+    }
   } catch (e) {
     theme = {
       palette: {
