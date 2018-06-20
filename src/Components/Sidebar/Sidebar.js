@@ -191,7 +191,7 @@ export class Sidebar extends React.Component {
                 <FormControlLabel
                   value="atomic-mass"
                   control={<Radio color="primary" />}
-                  label="Atomic Mass"
+                  label="Atomic Mass (g/mol)"
                 />
                 <FormControlLabel
                   value="electronegativity"
@@ -206,7 +206,7 @@ export class Sidebar extends React.Component {
                 <FormControlLabel
                   value="ionization-energies"
                   control={<Radio color="primary" />}
-                  label="Ionization Energies"
+                  label="Ionization Energies (kJ/mol)"
                 />
               </RadioGroup>
             </FormControl>
