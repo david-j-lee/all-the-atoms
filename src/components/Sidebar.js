@@ -73,6 +73,9 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
   },
+  search: {
+    width: '100%',
+  },
   temp: {
     display: 'flex',
     paddingTop: theme.spacing.unit * 2,
@@ -188,7 +191,7 @@ export class Sidebar extends React.Component {
         </Hidden>
         <div className={classes.content}>
           <div className={classes.section}>
-            <FormControl>
+            <FormControl className={classes.search}>
               <TextField
                 label="Search"
                 onChange={this.handleSearchChange}
