@@ -1,5 +1,4 @@
 import React from "react";
-import "./PList.css";
 
 // material
 import Table from "@material-ui/core/Table";

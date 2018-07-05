@@ -7,9 +7,9 @@ import {
   SET_THEME,
   SET_DISPLAY_VALUE,
   SET_TEMP_UNIT
-} from "./types";
+} from "../constants/actionConstants";
 
-import elementData from "../Data/elements.json";
+import elementData from "../data/elements.json";
 
 // material
 import indigo from "@material-ui/core/colors/indigo";
@@ -49,7 +49,7 @@ export const getTheme = () => dispatch => {
   try {
     theme = JSON.parse(theme);
     if (!theme.palette.type) {
-      throw "using old settings";
+      throw new Error("using old settings");
     }
   } catch (e) {
     theme = {

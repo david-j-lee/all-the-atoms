@@ -1,23 +1,47 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import "./PTable.css";
 
 // redux
 import { connect } from "react-redux";
 
+// material
+import { withStyles } from '@material-ui/core';
+
 // data
-import gridMapData from "../../Data/grid-map.json";
-import groupData from "../../Data/groups.json";
-import periodData from "../../Data/periods.json";
-import typeData from "../../Data/types.json";
+import gridMapData from "../data/grid-map.json";
+import groupData from "../data/groups.json";
+import periodData from "../data/periods.json";
+import typeData from "../data/types.json";
 
 // components
-import Element from "../Element/Element";
-import Empty from "../Empty/Empty";
-import Group from "../Group/Group";
-import Period from "../Period/Period";
-import Placeholder from "../Placeholder/Placeholder";
-import Type from "../Type/Type";
+import Element from "../components/Element";
+import Empty from "../components/Empty";
+import Group from "../components/Group";
+import Period from "../components/Period";
+import Placeholder from "../components/Placeholder";
+import Type from "../components/Type";
+
+const styles = theme => ({
+  root: {
+    padding: theme.spacing.unit * 2,
+  },
+  pTable: {
+    overflow: 'auto',
+    paddingBottom: '15px',
+    overflowX: 'auto',
+  },
+  pTableItems: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    minWidth: '950px',
+  },
+  legend: {
+    marginTop: 25,
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
+});
 
 export class PTable extends React.Component {
   constructor(props) {
@@ -124,14 +148,14 @@ export class PTable extends React.Component {
   };
 
   render() {
+    const { classes } = this.props;
+
     return (
-      <div className="content container-fluid mt-3">
-        <div className="p-table-container">
-          <div className="p-table">
-            <div className="p-table-items">{this.state.Tiles}</div>
-          </div>
-          <div className="legend">{this.state.Types}</div>
+      <div className={classes.root}>
+        <div className={classes.pTable}>
+          <div className={classes.pTableItems}>{this.state.Tiles}</div>
         </div>
+        <div className={classes.legend}>{this.state.Types}</div>
       </div>
     );
   }
@@ -148,4 +172,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, null)(PTable);
+export default connect(mapStateToProps, null)(withStyles(styles)(PTable));

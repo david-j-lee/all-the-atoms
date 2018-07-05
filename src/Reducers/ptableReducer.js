@@ -9,9 +9,9 @@ import {
   TOGGLE_MENU,
   SET_DISPLAY_VALUE,
   SET_TEMP_UNIT
-} from "../Actions/types";
+} from "../constants/actionConstants";
 
-import typeData from "../Data/types.json";
+import typeData from "../data/types.json";
 
 const initialState = {
   elements: [],

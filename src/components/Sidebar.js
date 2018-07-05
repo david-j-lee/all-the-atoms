@@ -1,6 +1,5 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import "./Sidebar.css";
 
 // redux
 import { connect } from "react-redux";
@@ -10,10 +9,10 @@ import {
   setElementalState,
   setDisplayValue,
   setTempUnit
-} from "../../Actions/ptableAction";
+} from "../actions/ptableActions";
 
 // material design
-import { Typography } from "@material-ui/core";
+import { withStyles } from "@material-ui/core";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
 import TextField from "@material-ui/core/TextField";
@@ -27,6 +26,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import Divider from "@material-ui/core/Divider";
+import Typography from "@material-ui/core/Typography";
 
 // material icons
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
@@ -34,7 +34,58 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 // font awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import ThemePicker from "../ThemePicker/ThemePicker";
+// components
+import ThemePicker from "./ThemePicker";
+
+const styles = theme => ({
+  sideBar: {
+    [theme.breakpoints.up('lg')]: {
+      position: 'relative',
+      minWidth: 250,
+    },
+  },
+  section: {
+    padding: theme.spacing.unit * 2,
+  },
+  content: {
+    flexGrow: 1,
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  link: {
+    padding: '0.5rem 1rem',
+    textAlign: 'center',
+  },
+  display: {
+    flexWrap: 'nowrap',
+  },
+  drawer: {
+    width: 250,
+    minHeight: '100vh',
+  },
+  drawerContent: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+  },
+  drawerTop: {
+    height: 64,
+    display: 'flex',
+    alignItems: 'center',
+  },
+  temp: {
+    display: 'flex',
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 0.5,
+  },
+  tempText: {
+    width: 'calc(100% - 50px)',
+  },
+  tempUnit: {
+    width: 50,
+    textAlign: 'center',
+  },
+});
 
 export class Sidebar extends React.Component {
   constructor(props) {
@@ -124,19 +175,20 @@ export class Sidebar extends React.Component {
   };
 
   render() {
+    const { classes } = this.props;
     const drawer = (
-      <div className="sideBar-wrapper">
-        <div className="sideBar-drawer-content">
-          <Hidden lgUp>
-            <div className="sideBar-top">
-              <IconButton onClick={this.toggleMenu}>
-                <ChevronRightIcon />
-              </IconButton>
-            </div>
-            <Divider className="mb-3" />
-          </Hidden>
-          <div className="sideBar-content">
-            <FormControl className="mx-3 my-1 my-md-3">
+      <div className={classes.drawerContent}>
+        <Hidden lgUp>
+          <div className={classes.top}>
+            <IconButton onClick={this.toggleMenu}>
+              <ChevronRightIcon />
+            </IconButton>
+          </div>
+          <Divider />
+        </Hidden>
+        <div className={classes.content}>
+          <div className={classes.section}>
+            <FormControl>
               <TextField
                 label="Search"
                 onChange={this.handleSearchChange}
@@ -144,8 +196,8 @@ export class Sidebar extends React.Component {
                 value={this.state.search}
               />
             </FormControl>
-            <div className="mx-3 mt-1 row">
-              <FormControl className="col-auto col-temp">
+            <div className={classes.temp}>
+              <FormControl className={classes.tempText}>
                 <TextField
                   label="Temperature"
                   onChange={this.handleTempChange}
@@ -153,7 +205,7 @@ export class Sidebar extends React.Component {
                   value={this.state.temperature}
                 />
               </FormControl>
-              <FormControl className="col-auto col-temp-unit">
+              <FormControl className={classes.tempUnit}>
                 <InputLabel htmlFor="temperature-unit" />
                 <Select
                   value={this.state.temperatureUnit}
@@ -161,91 +213,76 @@ export class Sidebar extends React.Component {
                   inputProps={{
                     name: "unit",
                     id: "temperature-unit"
-                  }}
-                >
+                  }}>
                   <MenuItem value="k">K</MenuItem>
                   <MenuItem value="c">C</MenuItem>
                   <MenuItem value="f">F</MenuItem>
                 </Select>
               </FormControl>
             </div>
-            <div className="mx-3 mb-3">
-              <Typography>
-                <small>
-                  <FontAwesomeIcon icon="circle" size="xs" /> Solid
-                  &nbsp;&nbsp;&nbsp;
-                  <FontAwesomeIcon icon="tint" size="xs" /> Liquid
-                  &nbsp;&nbsp;&nbsp;
-                  <FontAwesomeIcon icon="cloud" size="xs" /> Gas
-                </small>
-              </Typography>
-            </div>
-            <Divider className="mt-3" />
-            <FormControl className="mx-3 my-3">
-              <RadioGroup
-                name="display"
-                value={this.state.displayValue}
-                onChange={this.handleDisplayChange}
-                className="sideBar-display"
-              >
-                <FormControlLabel
-                  value="atomic-mass"
-                  control={<Radio color="primary" />}
-                  label="Atomic Mass (g/mol)"
-                />
-                <FormControlLabel
-                  value="electronegativity"
-                  control={<Radio color="primary" />}
-                  label="Electronegativity"
-                />
-                <FormControlLabel
-                  value="electron-configuration"
-                  control={<Radio color="primary" />}
-                  label="Electron configuration"
-                />
-                <FormControlLabel
-                  value="ionization-energies"
-                  control={<Radio color="primary" />}
-                  label="Ionization Energies (kJ/mol)"
-                />
-              </RadioGroup>
-            </FormControl>
-            <Divider className="mb-3" />
-            <div className="mx-3">
-              <ThemePicker />
-            </div>
-          </div>
-          <div className="sideBar-link">
-            <Typography className="typo-sm">
-              <a
-                href="https://github.com/david-j-lee/theptable"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-decoration-none"
-              >
-                <Button color="secondary" size="small">
-                  Github
-                </Button>
-              </a>
+            <Typography>
+              <small>
+                <FontAwesomeIcon icon="circle" size="xs" /> Solid
+                &nbsp;&nbsp;&nbsp;
+                <FontAwesomeIcon icon="tint" size="xs" /> Liquid
+                &nbsp;&nbsp;&nbsp;
+                <FontAwesomeIcon icon="cloud" size="xs" /> Gas
+              </small>
             </Typography>
           </div>
+          <Divider />
+          <FormControl className={classes.section}>
+            <RadioGroup
+              name="display"
+              value={this.state.displayValue}
+              onChange={this.handleDisplayChange}
+              className={classes.display}>
+              <FormControlLabel
+                value="atomic-mass"
+                control={<Radio color="primary" />}
+                label="Atomic Mass (g/mol)" />
+              <FormControlLabel
+                value="electronegativity"
+                control={<Radio color="primary" />}
+                label="Electronegativity" />
+              <FormControlLabel
+                value="electron-configuration"
+                control={<Radio color="primary" />}
+                label="Electron configuration" />
+              <FormControlLabel
+                value="ionization-energies"
+                control={<Radio color="primary" />}
+                label="Ionization Energies (kJ/mol)" />
+            </RadioGroup>
+          </FormControl>
+          <Divider />
+          <div className={classes.section}>
+            <ThemePicker />
+          </div>
+        </div>
+        <div className={classes.link}>
+          <Button color="secondary" size="small"
+            href="https://github.com/david-j-lee/theptable"
+            target="_blank"
+            rel="noopener noreferrer">
+            Github
+          </Button>
         </div>
       </div>
     );
 
     return (
-      <div className="sideBar">
+      <div className={classes.sideBar}>
         <Hidden lgUp>
           <Drawer
             variant="temporary"
             anchor="right"
             open={this.state.menuMobileOpen}
             onClose={this.toggleMenu}
-            classes={{ paper: "sideBar-drawer" }}
+            classes={{ paper: classes.drawer }}
             ModalProps={{
               keepMounted: true // Better open performance on mobile.
-            }}
-          >
+            }}>
             {drawer}
           </Drawer>
         </Hidden>
@@ -254,8 +291,7 @@ export class Sidebar extends React.Component {
             variant="permanent"
             open
             anchor="right"
-            classes={{ paper: "sideBar-drawer" }}
-          >
+            classes={{ paper: classes.drawer }}>
             {drawer}
           </Drawer>
         </Hidden>
@@ -288,4 +324,4 @@ const mapDispatchToProps = {
   setTempUnit
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Sidebar));

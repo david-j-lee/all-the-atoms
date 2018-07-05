@@ -1,11 +1,9 @@
 @import "styles/_variables.scss";
-@import "styles/theme.scss";
 @import "styles/types.scss";
 
 body,
 html,
-#root,
-.site-wrapper {
+#root {
   position: relative;
   min-height: 100vh;
 }
@@ -25,32 +23,25 @@ h6 {
   font-family: "Montserrat", sans-serif;
 }
 
-.nowrap {
-  white-space: nowrap;
+// Elemental styles
+.fa-circle {
+  color: $solid-color;
+}
+.fa-tint {
+  color: $liquid-color;
+}
+.fa-cloud {
+  color: $gas-color;
 }
 
-.cursor-pointer {
-  cursor: pointer;
-}
-
-.typo-sm {
-  font-size: .7rem !important;
-}
-
-.p-table {
-  overflow-x: auto;
-  // &::-webkit-scrollbar {
-  //   height: 7px;
-  //   background-color: white;
-  // }
-}
-
-a:hover,
-a:active {
-  color: inherit;
-}
-
-.text-decoration-none,
-.text-decoration-none:hover {
-  text-decoration: none;
+.legend-item {
+  &:not(.active):not(:hover) {
+    background-color: transparent !important;
+  }
+  &.active p,
+  &:hover p {
+    // background-color: transparent !important;
+    color: #333 !important;
+    cursor: pointer;
+  }
 }

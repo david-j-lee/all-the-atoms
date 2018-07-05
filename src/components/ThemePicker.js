@@ -1,11 +1,11 @@
 import React from "react";
-import "./ThemePicker.css";
 
 // redux
 import { connect } from "react-redux";
-import { getTheme, setTheme } from "../../Actions/ptableAction";
+import { getTheme, setTheme } from "../actions/ptableActions";
 
 // material
+import { withStyles, ButtonBase } from '@material-ui/core';
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
@@ -13,11 +13,14 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogActions from "@material-ui/core/DialogActions";
 import Dialog from "@material-ui/core/Dialog";
+// import Tooltip from '@material-ui/core/Tooltip';
+
 import Brightness2 from "@material-ui/icons/Brightness2";
 import BrightnessHigh from "@material-ui/icons/BrightnessHigh";
 
 // material icons
 import ChevronRight from "@material-ui/icons/ChevronRight";
+// import ColorLens from '@material-ui/icons/ColorLens';
 
 // material colors
 import red from "@material-ui/core/colors/red";
@@ -39,7 +42,58 @@ import deepOrange from "@material-ui/core/colors/deepOrange";
 import brown from "@material-ui/core/colors/brown";
 import grey from "@material-ui/core/colors/grey";
 import blueGrey from "@material-ui/core/colors/blueGrey";
-import { ButtonBase } from "@material-ui/core";
+
+const styles = theme => ({
+  colorsDialog: {
+    maxWidth: 225,
+  },
+  colorsDialogContent: {
+    maxWidth: 125,
+    margin: '0 auto',
+  },
+  colorPreviews: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  colorPreview: {
+    width: '25%',
+    padding: '0.15rem',
+  },
+  colorPreviewCircle: {
+    height: 25,
+    width: '100%',
+    borderRadius: '100%',
+  },
+  colorPreviewCircleLeft: {
+    borderTopLeftRadius: 25,
+    borderBottomLeftRadius: 25,
+    borderTopRightRadius: 0,
+    borderBottomRightRadius: 0,
+    width: 'calc(25px/2)',
+    height: 25,
+  },
+  colorPreviewCircleRight: {
+    borderTopLeftRadius: 0,
+    borderBottomLeftRadius: 0,
+    borderTopRightRadius: 25,
+    borderBottomRightRadius: 25,
+    width: 'calc(25px/2)',
+    height: 25,
+  },
+  selectedColors: {
+    display: 'flex',
+    flexWrap: 'nowrap',
+  },
+  selectedColorInner: {
+    width: '25%',
+    display: 'flex',
+  },
+  selectedColorInnerHalf: {
+    margin: 'auto',
+    display: 'flex',
+    textAlign: 'center',
+  },
+});
 
 export class ThemePicker extends React.Component {
   constructor(props) {
@@ -48,6 +102,7 @@ export class ThemePicker extends React.Component {
     this.state = {
       icon: "",
       theme: {},
+      type: '',
       dialogOpen: false,
       color1: "",
       color2: ""
@@ -114,7 +169,16 @@ export class ThemePicker extends React.Component {
     });
   }
 
-  getColorPreviews = () => {
+  selectColor = color => {
+    if (this.state.color1 === "") {
+      this.setState({ color1: color });
+    } else if (this.state.color2 === "") {
+      this.setState({ color2: color });
+    }
+  };
+
+  render() {
+    const { classes } = this.props;
     const colors = [
       red,
       pink,
@@ -136,34 +200,33 @@ export class ThemePicker extends React.Component {
       grey,
       blueGrey
     ];
-    return (
-      <div className="color-previews">
+
+    const colorPreviews = (
+      <div className={classes.colorPreviews}>
         {colors.map((color, i) => {
           return (
-            <div key={i} className="color-preview">
+            <div key={i} className={classes.colorPreview}>
               <ButtonBase
                 onClick={() => this.selectColor(color)}
                 style={{ backgroundColor: color[500] }}
-                className="color-preview-circle mx-auto"
+                className={classes.colorPreviewCircle}
               />
             </div>
           );
         })}
       </div>
     );
-  };
 
-  getSelectedColors() {
-    return (
-      <div className="selected-colors mt-3">
-        <div>
-          <div>
+    const selectedColors = (
+      <div className={classes.selectedColors}>
+        <div className={classes.selectedColorInner}>
+          <div className={classes.selectedColorInnerHalf}>
             <div
-              className="color-preview-circle--left"
+              className={classes.colorPreviewCircleLeft}
               style={{ backgroundColor: this.props.theme.palette.primary[500] }}
             />
             <div
-              className="color-preview-circle--right"
+              className={classes.colorPreviewCircleRight}
               style={{
                 backgroundColor: this.props.theme.palette.secondary[500]
               }}
@@ -179,12 +242,12 @@ export class ThemePicker extends React.Component {
           <div>
             <ButtonBase
               onClick={this.handleColor1Click}
-              className="color-preview-circle--left cursor-pointer"
+              className={classes.colorPreviewCircleLeft}
               style={{ backgroundColor: this.state.color1[500] }}
             />
             <ButtonBase
               onClick={this.handleColor2Click}
-              className="color-preview-circle--right cursor-pointer"
+              className={classes.colorPreviewCircleRight}
               style={{ backgroundColor: this.state.color2[500] }}
             />
           </div>
@@ -192,31 +255,18 @@ export class ThemePicker extends React.Component {
         <div />
       </div>
     );
-  }
 
-  selectColor = color => {
-    if (this.state.color1 === "") {
-      this.setState({ color1: color });
-    } else if (this.state.color2 === "") {
-      this.setState({ color2: color });
-    }
-  };
-
-  render() {
     return (
       <div>
-        <IconButton
-          onClick={this.changeType}
-          color="primary"
-        >
-          {this.state.icon}
-        </IconButton>
+        {/* <Tooltip title={"Change theme type"}> */}
+          <IconButton onClick={this.changeType} color="primary">
+            {this.state.icon}
+          </IconButton>
+        {/* </Tooltip> */}
         <Button
           variant="outlined"
           onClick={this.handleDialogOpen}
-          color="secondary"
-          className="ml-3"
-        >
+          color="secondary">
           Pick Colors
         </Button>
         <Dialog
@@ -231,9 +281,9 @@ export class ThemePicker extends React.Component {
               : "Select Secondary Color Scheme"}
           </DialogTitle>
           <DialogContent>
-            <div className="colors-dialog-content">
-              {this.getColorPreviews()}
-              {this.getSelectedColors()}
+            <div className={classes.colorsDialogContent}>
+              {colorPreviews}
+              {selectedColors}
             </div>
           </DialogContent>
           <DialogActions>
@@ -266,4 +316,4 @@ const mapDispatchToProps = {
   setTheme
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ThemePicker);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(ThemePicker));
