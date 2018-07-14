@@ -4,38 +4,26 @@ import { withStyles } from "@material-ui/core";
 
 const styles = theme => ({
   root: {
-    width: 'calc(100% / 18 - 15px / 18)',
+    width: "calc(100% / 18 - 15px / 18)"
+  },
+  active: {
+    opacity: 1
+  },
+  inactive: {
+    opacity: 0.25
   },
   body: {
     margin: 1,
     padding: 4,
-    height: 'calc(100% - 2px)',
-    fontSize: '9pt',
-    lineHeight: 1.3,
-  },
+    height: "calc(100% - 2px)",
+    fontSize: "9pt",
+    lineHeight: 1.3
+  }
 });
 
 export class Placeholder extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isActive: this.props.isActive
-    };
-  }
-
-  componentWillMount() {
-    this.setState({ isActive: this.props.isActive });
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (this.state.isActive !== nextProps.isActive) {
-      this.setState({ isActive: nextProps.isActive });
-    }
-  }
-
   render() {
-    const { classes } = this.props;
+    const { classes, isActive } = this.props;
     let type, text;
 
     if (this.props.type === "l") {
@@ -48,7 +36,13 @@ export class Placeholder extends React.Component {
 
     return (
       <div className={classes.root}>
-        <div className={[classes.body, type + '-bg'].join(" ")}>
+        <div
+          className={[
+            classes.body,
+            type + "-bg",
+            isActive ? classes.active : classes.inactive
+          ].join(" ")}
+        >
           <span>{text}</span>
         </div>
       </div>
