@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react';
 
 // redux
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
 // material
 import { withStyles } from '@material-ui/core';
-import Typography from "@material-ui/core/Typography";
-import Hidden from "@material-ui/core/Hidden";
-import Popover from "@material-ui/core/Popover";
-import Grid from "@material-ui/core/Grid";
+import Typography from '@material-ui/core/Typography';
+import Hidden from '@material-ui/core/Hidden';
+import Popover from '@material-ui/core/Popover';
+import Grid from '@material-ui/core/Grid';
 
 // font awesome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const styles = theme => ({
   root: {
@@ -88,78 +88,47 @@ export class Element extends React.Component {
   constructor(props) {
     super(props);
 
+    this.anchorEl = React.createRef();
     this.state = {
-      displayValueText: "",
       popoverOpen: false,
-      anchorEl: null,
     };
   }
 
-  componentWillMount() {
-    this.setState({ displayValueText: this.props.displayValueText });
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (this.state.displayValueText !== nextProps.displayValueText) {
-      this.setState({ displayValueText: nextProps.displayValueText });
-    }
-  }
-
   handlePopoverOpen = event => {
-    this.setState({ anchorEl: event.target });
+    this.setState({ anchorEl: event.target, popoverOpen: true });
   };
 
   handlePopoverClose = () => {
-    this.setState({ anchorEl: null });
+    this.setState({ anchorEl: null, popoverOpen: false });
   };
 
-  // togglePopover = () => {
-  //   this.setState({
-  //     popoverOpen: !this.state.popoverOpen
-  //   });
-  // };
-
-  // openPopover = () => {
-  //   if (this.pendingClose) {
-  //     clearTimeout(this.pendingClose);
-  //     this.pendingClose = null;
-  //   }
-  //   this.setState({
-  //     popoverOpen: true
-  //   });
-  // };
-
-  // closePopover = () => {
-  //   this.pendingClose = setTimeout(() =>
-  //     this.setState({
-  //       popoverOpen: false
-  //     })
-  //   );
-  // };
+  togglePopover = () => {
+    this.setState({ popoverOpen: !this.state.popoverOpen });
+  };
 
   render() {
-    const { classes, element } = this.props;
-    const { anchorEl } = this.state;
+    const { classes, element, displayValueText } = this.props;
+    const { popoverOpen } = this.state;
 
-    const normalizedType = element["type"].replace(/\s+/g, "-").toLowerCase();
-    const elementClassName = `${normalizedType}-bg group-${element["group"]} period-${element["period"]}`;
-
-    const popoverOpen = !!anchorEl;
+    const normalizedType = element['type'].replace(/\s+/g, '-').toLowerCase();
+    const elementClassName = `${normalizedType}-bg group-${
+      element['group']
+    } period-${element['period']}`;
 
     // show element state if it exists
     // the state is set when a temperature is set
-    let State = "";
+    let State = '';
     if (element.state !== undefined) {
-      let icon = "";
+      let icon = '';
       switch (element.state) {
-        case "solid":
-          icon = "circle";
+        case 'solid':
+          icon = 'circle';
           break;
-        case "liquid":
-          icon = "tint";
+        case 'liquid':
+          icon = 'tint';
           break;
-        case "gas":
-          icon = "cloud";
+        case 'gas':
+          icon = 'cloud';
           break;
         default:
           break;
@@ -167,8 +136,8 @@ export class Element extends React.Component {
       State = <FontAwesomeIcon icon={icon} size="xs" />;
     }
 
-    let Points = "";
-    if (element["melting-point"] || element["boiling-point"]) {
+    let Points = '';
+    if (element['melting-point'] || element['boiling-point']) {
       Points = (
         <Grid container className={classes.points}>
           <Grid item md={6}>
@@ -176,9 +145,9 @@ export class Element extends React.Component {
               icon="tint"
               size="xs"
               className={`${normalizedType}-text`}
-            />{" "}
+            />{' '}
             <span className="">
-              <Typography>{element["melting-point-converted"]}</Typography>
+              <Typography>{element['melting-point-converted']}</Typography>
             </span>
           </Grid>
           <Grid item md={6}>
@@ -186,9 +155,9 @@ export class Element extends React.Component {
               icon="cloud"
               size="xs"
               className={`${normalizedType}-text`}
-            />{" "}
+            />{' '}
             <span className="">
-              <Typography>{element["boiling-point-converted"]}</Typography>
+              <Typography>{element['boiling-point-converted']}</Typography>
             </span>
           </Grid>
         </Grid>
@@ -197,41 +166,53 @@ export class Element extends React.Component {
 
     return (
       <button
+        ref={this.anchorEl}
         className={classes.root}
+        id={'Popover-' + element.symbol}
         onClick={this.togglePopover}
-        id={"Popover-" + element.symbol}
         onMouseOver={this.handlePopoverOpen}
-        onMouseOut={this.handlePopoverClose}>
+        onMouseOut={this.handlePopoverClose}
+      >
         {/* set if active here */}
-        <div className={[classes.body, elementClassName, (element.isActive ? classes.active : classes.inactive)].join(' ')}>
+        <div
+          className={[
+            classes.body,
+            elementClassName,
+            element.isActive ? classes.active : classes.inactive,
+          ].join(' ')}
+        >
           <div className={classes.info}>
             <div className={classes.atomicNumber}>
-              <span>{element["atomic-number"]}</span>
-              <span className="element-state ml-auto">{State}</span>
+              <span>{element['atomic-number']}</span>
+              <span className="element-state">{State}</span>
             </div>
-            <div className={classes.symbol}>{element["symbol"]}</div>
+            <div className={classes.symbol}>{element['symbol']}</div>
             <Hidden mdDown className={[classes.atomicName].join(' ')}>
-              {element["atomic-name"]}
+              {element['atomic-name']}
             </Hidden>
             <div className={classes.displayValue}>
-              {element["display-value"]}
+              {element['display-value']}
             </div>
           </div>
         </div>
 
         <Popover
           className={classes.popover}
-          classes={{ paper: classes.paper, }}
+          classes={{ paper: classes.paper }}
           open={popoverOpen}
-          anchorEl={anchorEl}
-          anchorOrigin={{ vertical: 'top', horizontal: 'right', }}
-          transformOrigin={{ vertical: 'top', horizontal: 'left', }}
+          anchorEl={this.anchorEl.current}
+          anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+          transformOrigin={{ vertical: 'top', horizontal: 'left' }}
           onClose={this.handlePopoverClose}
-          disableRestoreFocus>
-
+          disableRestoreFocus
+        >
           <div className={`${normalizedType}-bg`}>
-            <Typography color="inherit" variant="title" className={classes.popoverHeader}>
-              {element["atomic-name"]}
+            <Typography
+              color="inherit"
+              variant="title"
+              className={classes.popoverHeader}
+            >
+              {element['atomic-name']}
             </Typography>
           </div>
           <div className={classes.popoverContent}>
@@ -242,7 +223,7 @@ export class Element extends React.Component {
                     <Typography>Atomic Number</Typography>
                   </td>
                   <td className={classes.textRight}>
-                    <Typography>{element["atomic-number"]}</Typography>
+                    <Typography>{element['atomic-number']}</Typography>
                   </td>
                 </tr>
                 <tr className={classes.popoverItem}>
@@ -250,25 +231,23 @@ export class Element extends React.Component {
                     <Typography>Symbol</Typography>
                   </td>
                   <td className={classes.textRight}>
-                    <Typography>{element["symbol"]}</Typography>
+                    <Typography>{element['symbol']}</Typography>
                   </td>
                 </tr>
                 <tr className={classes.popoverItem}>
                   <td className={classes.header}>
                     <Typography>Type</Typography>
                   </td>
-                  <td
-                    className={`${normalizedType}-border-bottom`}
-                  >
-                    <Typography>{element["type"]}</Typography>
+                  <td className={`${normalizedType}-border-bottom`}>
+                    <Typography>{element['type']}</Typography>
                   </td>
                 </tr>
                 <tr className={classes.popoverItem}>
                   <td className={classes.header}>
-                    <Typography>{this.state.displayValueText}</Typography>
+                    <Typography>{displayValueText}</Typography>
                   </td>
                   <td className={classes.textRight}>
-                    <Typography>{element["display-value"]}</Typography>
+                    <Typography>{element['display-value']}</Typography>
                   </td>
                 </tr>
               </tbody>
@@ -276,8 +255,7 @@ export class Element extends React.Component {
             {Points}
           </div>
         </Popover>
-
-      </button >
+      </button>
     );
   }
 }
@@ -286,8 +264,11 @@ const mapStateToProps = state => {
   return {
     theme: state.ptable.theme,
     displayValue: state.ptable.displayValue,
-    displayValueText: state.ptable.displayValueText
+    displayValueText: state.ptable.displayValueText,
   };
 };
 
-export default connect(mapStateToProps, null)(withStyles(styles)(Element));
+export default connect(
+  mapStateToProps,
+  null,
+)(withStyles(styles)(Element));
