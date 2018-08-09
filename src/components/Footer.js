@@ -34,7 +34,7 @@ export class Footer extends React.Component {
         <Typography className={classes.text}>
           Made by{" "}
           <a className={classes.link}
-            href="http://www.davethedev.me"
+            href="http://devdavidlee.com"
             target="_blank"
             rel="noopener noreferrer">
             David Lee

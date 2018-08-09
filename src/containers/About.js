@@ -35,7 +35,7 @@ const styles = theme => ({
 export class About extends React.Component {
   render() {
     const { classes } = this.props;
-    const gitHubLink = <a target="_blank" href="https://github.com/david-j-lee/theptable" className={classes.link} rel="noopener noreferrer">GitHub</a>;
+    const gitHubLink = <a target="_blank" href="https://github.com/david-j-lee/p-table" className={classes.link} rel="noopener noreferrer">GitHub</a>;
     const payPalLink = <a target="_blank" href="https://paypal.me/davethedev" className={classes.link} rel="noopener noreferrer">PayPal</a>;
 
     return (
@@ -45,7 +45,7 @@ export class About extends React.Component {
             About the P Table
           </Typography>
           <div className={classes.actions}>
-            <Button variant="outlined" target="_blank" href="https://github.com/david-j-lee/theptable">GitHub</Button>
+            <Button variant="outlined" target="_blank" href="https://github.com/david-j-lee/p-table">GitHub</Button>
             <Button variant="outlined" target="_blank" href="https://paypal.me/davethedev">PayPal</Button>
           </div>
           <Typography variant="body1" className={classes.section}>
