@@ -182,7 +182,7 @@ export class Sidebar extends React.Component {
     const drawer = (
       <div className={classes.drawerContent}>
         <Hidden lgUp>
-          <div className={classes.top}>
+          <div className={classes.drawerTop}>
             <IconButton onClick={this.toggleMenu}>
               <ChevronRightIcon />
             </IconButton>
