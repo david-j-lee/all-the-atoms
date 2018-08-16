@@ -42,6 +42,9 @@ const styles = theme => ({
   inactive: {
     opacity: 0.25,
   },
+  elementState: {
+    marginLeft: 'auto',
+  },
   atomicNumber: {
     fontSize: '9pt',
     display: 'flex',
@@ -184,7 +187,7 @@ export class Element extends React.Component {
           <div className={classes.info}>
             <div className={classes.atomicNumber}>
               <span>{element['atomic-number']}</span>
-              <span className="element-state">{State}</span>
+              <span className={classes.elementState}>{State}</span>
             </div>
             <div className={classes.symbol}>{element['symbol']}</div>
             <Hidden mdDown className={[classes.atomicName].join(' ')}>
