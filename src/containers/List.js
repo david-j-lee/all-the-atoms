@@ -12,7 +12,7 @@ import Paper from "@material-ui/core/Paper";
 // redux
 import { connect } from "react-redux";
 
-export class PList extends React.Component {
+export class List extends React.Component {
   constructor(prop) {
     super(prop);
 
@@ -110,7 +110,7 @@ export class PList extends React.Component {
   render() {
     return (
       <div className="">
-        <Paper id="plist" className="">
+        <Paper id="list" className="">
           <Table>
             {this.getTableHeaders()}
             <TableBody>
@@ -170,9 +170,9 @@ export class PList extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    displayValueText: state.ptable.displayValueText,
-    elements: state.ptable.elements
+    displayValueText: state.table.displayValueText,
+    elements: state.table.elements
   };
 };
 
-export default connect(mapStateToProps, null)(PList);
+export default connect(mapStateToProps, null)(List);

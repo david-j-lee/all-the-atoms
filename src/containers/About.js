@@ -42,7 +42,7 @@ export class About extends React.Component {
       <div className={classes.root}>
         <div className={classes.content}>
           <Typography variant="headline">
-            About the P Table
+            About the All the Atoms
           </Typography>
           <div className={classes.actions}>
             <Button variant="outlined" target="_blank" href="https://github.com/david-j-lee/p-table">GitHub</Button>

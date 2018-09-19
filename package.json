@@ -1,8 +1,7 @@
 {
-  "name": "p-table",
+  "name": "all-the-atoms",
   "version": "0.1.0",
-  "private": true,
-  "proxy": "http://localhost:5000/",
+  "private": false,
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
@@ -10,8 +9,8 @@
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
-    "publish": "npm run build && aws s3 sync build/ s3://theptable.com && npm run static-cache",
-    "static-cache": "aws s3 cp s3://theptable.com/static/ s3://theptable.com/static/ --recursive --metadata-directive REPLACE --expires 2028-01-01T00:00:00Z --acl public-read --cache-control max-age=31536000,s-maxage=31536000,public",
+    "publish": "npm run build && aws s3 sync build/ s3://alltheatoms.com && npm run static-cache",
+    "static-cache": "aws s3 cp s3://alltheatoms.com/static/ s3://alltheatoms.com/static/ --recursive --metadata-directive REPLACE --expires 2028-01-01T00:00:00Z --acl public-read --cache-control max-age=31536000,s-maxage=31536000,public",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

@@ -2,7 +2,7 @@ import React from "react";
 
 // redux
 import { connect } from "react-redux";
-import { searchElements } from "../actions/ptableActions";
+import { searchElements } from "../actions/tableActions";
 
 // material
 import { withStyles } from '@material-ui/core';
@@ -75,7 +75,7 @@ export class Type extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    search: state.ptable.search
+    search: state.table.search
   };
 };
 

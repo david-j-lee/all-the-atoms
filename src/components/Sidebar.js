@@ -9,7 +9,7 @@ import {
   setElementalState,
   setDisplayValue,
   setTempUnit
-} from "../actions/ptableActions";
+} from "../actions/tableActions";
 
 // material design
 import { withStyles } from "@material-ui/core";
@@ -265,7 +265,7 @@ export class Sidebar extends React.Component {
         </div>
         <div className={classes.link}>
           <Button color="secondary" size="small"
-            href="https://github.com/david-j-lee/theptable"
+            href="https://github.com/david-j-lee/thetable"
             target="_blank"
             rel="noopener noreferrer">
             Github
@@ -311,11 +311,11 @@ Sidebar.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    search: state.ptable.search,
-    temperature: state.ptable.temperature,
-    temperatureUnit: state.ptable.temperatureUnit,
-    menuMobileOpen: state.ptable.menuMobileOpen,
-    displayValue: state.ptable.displayValue
+    search: state.table.search,
+    temperature: state.table.temperature,
+    temperatureUnit: state.table.temperatureUnit,
+    menuMobileOpen: state.table.menuMobileOpen,
+    displayValue: state.table.displayValue
   };
 };
 

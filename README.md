@@ -1,6 +1,6 @@
-# PTable
+# All the Atoms
 
-View live site here [theptable.com](http://theptable.com)
+View live site here [alltheatoms.com](http://alltheatoms.com)
 
 The internet was in desperate need for a modern day Periodic Table of Elements on the web, so I decided to create one.
 

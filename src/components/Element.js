@@ -265,9 +265,9 @@ export class Element extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    theme: state.ptable.theme,
-    displayValue: state.ptable.displayValue,
-    displayValueText: state.ptable.displayValueText,
+    theme: state.table.theme,
+    displayValue: state.table.displayValue,
+    displayValueText: state.table.displayValueText,
   };
 };
 

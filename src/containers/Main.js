@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 
 // redux
 import { connect } from "react-redux";
-import { getTheme, getElements } from "../actions/ptableActions";
+import { getTheme, getElements } from "../actions/tableActions";
 
 // material
 import { withStyles } from '@material-ui/core';
@@ -11,8 +11,8 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 // components
-import PTable from "./PTable";
-import PList from "./PList";
+import Table from "./Table";
+import List from "./List";
 import About from "./About";
 
 import Navbar from "../components/Navbar";
@@ -73,8 +73,8 @@ export class Main extends React.Component {
               <Navbar />
               <div className={classes.main}>
                 <div className={classes.mainContent}>
-                  <Route exact path="/" component={PTable} />
-                  <Route path="/list" component={PList} />
+                  <Route exact path="/" component={Table} />
+                  <Route path="/list" component={List} />
                   <Route path="/about" component={About} />
                 </div>
                 <Footer />
@@ -92,7 +92,7 @@ export class Main extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    theme: state.ptable.theme
+    theme: state.table.theme
   };
 };
 

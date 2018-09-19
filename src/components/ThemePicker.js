@@ -2,7 +2,7 @@ import React from "react";
 
 // redux
 import { connect } from "react-redux";
-import { getTheme, setTheme } from "../actions/ptableActions";
+import { getTheme, setTheme } from "../actions/tableActions";
 
 // material
 import { withStyles, ButtonBase } from '@material-ui/core';
@@ -307,7 +307,7 @@ export class ThemePicker extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    theme: state.ptable.theme
+    theme: state.table.theme
   };
 };
 

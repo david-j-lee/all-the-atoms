@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 // redux
 import { connect } from "react-redux";
-import { toggleMenu } from "../actions/ptableActions";
+import { toggleMenu } from "../actions/tableActions";
 
 // material
 import { withStyles } from '@material-ui/core';
@@ -57,7 +57,7 @@ export class Navbar extends React.Component {
       <AppBar className={classes.muiNavbar} position="fixed">
         <Toolbar>
           <Typography variant="title" color="inherit">
-            PTable
+            All the Atoms
           </Typography>
           <div className={classes.flexGrow} />
           <Button component={Link} to="/" color="inherit" size="small">
@@ -86,7 +86,7 @@ export class Navbar extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    menuMobileOpen: state.ptable.menuMobileOpen
+    menuMobileOpen: state.table.menuMobileOpen
   };
 };
 

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import ptableReducer from './ptableReducer';
+import tableReducer from './tableReducer';
 
 export default combineReducers({
-  ptable: ptableReducer
+  table: tableReducer
 });

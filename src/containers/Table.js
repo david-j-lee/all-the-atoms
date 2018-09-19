@@ -43,7 +43,7 @@ const styles = theme => ({
   },
 });
 
-export class PTable extends React.Component {
+export class Table extends React.Component {
   constructor(props) {
     super(props);
 
@@ -161,15 +161,15 @@ export class PTable extends React.Component {
   }
 }
 
-PTable.propTypes = {
+Table.propTypes = {
   elements: PropTypes.array
 };
 
 const mapStateToProps = state => {
   return {
-    elements: state.ptable.elements,
-    search: state.ptable.search
+    elements: state.table.elements,
+    search: state.table.search
   };
 };
 
-export default connect(mapStateToProps, null)(withStyles(styles)(PTable));
+export default connect(mapStateToProps, null)(withStyles(styles)(Table));
