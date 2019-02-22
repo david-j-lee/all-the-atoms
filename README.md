@@ -21,14 +21,4 @@ The following prefixes can be used:
 
 ## TODO
 
-* [x] Implement element popover on hover (not out of the box with reactstrap)
-* [x] Set atomic mass to 4 significant figures
-* [x] Add Electronegativities
-* [x] Add Electron configuration
-* [x] Add Ionization Energies
-* [x] Fix strange input behavior on mobile (iOS)
-* [x] Add github link in footer
-* [x] Remove white space on mobile so there is no scrolling if it all fits on one screen
-* [x] Make temp unit selectable between kelvins, celsius or fahrenheit
-* [x] Implement Redux
 * [ ] Add clear button next to text fields
