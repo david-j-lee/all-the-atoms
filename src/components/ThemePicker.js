@@ -83,13 +83,15 @@ export default function ThemePicker() {
   };
 
   const changeColors = (primary, secondary) => {
-    let newTheme = { ...theme };
-
-    // set new colors
-    newTheme.palette.primary = primary;
-    newTheme.palette.secondary = secondary;
-
-    setTheme(newTheme);
+    setTheme({
+      palette: {
+        type: theme.palette.type,
+        primary: primary,
+        secondary: secondary,
+        error: theme.palette.error,
+        contrastThreshold: 3,
+      },
+    });
   };
 
   const handleClose = () => {
@@ -168,12 +170,7 @@ export default function ThemePicker() {
       <IconButton onClick={() => setDialogOpen(true)} color="inherit">
         <PaletteIcon />
       </IconButton>
-      <Dialog
-        disableBackdropClick
-        disableEscapeKeyDown
-        open={dialogOpen}
-        classes={{ paper: 'colors-dialog' }}
-      >
+      <Dialog open={dialogOpen} classes={{ paper: 'colors-dialog' }}>
         <DialogTitle>
           {!color1
             ? 'Select Primary Color Scheme'
