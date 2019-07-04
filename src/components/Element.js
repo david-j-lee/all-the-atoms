@@ -238,7 +238,7 @@ const useStyles = makeStyles(theme => ({
   },
   popoverHeader: {
     padding: theme.spacing(1.5),
-    color: theme.palette.getContrastText(theme.palette.text.primary),
+    color: 'inherit',
   },
   popoverContent: {
     padding: theme.spacing(1.5),

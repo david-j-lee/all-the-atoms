@@ -165,7 +165,7 @@ export default function ThemePicker() {
 
   return (
     <div>
-      <IconButton onClick={() => setDialogOpen(true)}>
+      <IconButton onClick={() => setDialogOpen(true)} color="inherit">
         <PaletteIcon />
       </IconButton>
       <Dialog

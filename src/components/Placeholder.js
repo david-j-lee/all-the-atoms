@@ -49,6 +49,6 @@ const useStyles = makeStyles(theme => ({
     height: 'calc(100% - 2px)',
     fontSize: '9pt',
     lineHeight: 1.3,
-    color: theme.palette.getContrastText(theme.palette.text.primary),
+    color: 'inherit',
   },
 }));

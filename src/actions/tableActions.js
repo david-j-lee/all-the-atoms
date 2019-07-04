@@ -42,6 +42,7 @@ export const tableActions = {
   },
   setTheme(theme) {
     return state => {
+      localStorage.setItem('theme', theme);
       return {
         ...state,
         theme: createMuiTheme({ ...theme }),

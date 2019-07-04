@@ -34,12 +34,12 @@ export default function Navbar() {
         </Typography>
         <div className={classes.flexGrow} />
         {router.location.pathname === '/list' && (
-          <IconButton component={Link} to="/">
+          <IconButton component={Link} to="/" color="inherit">
             <GridOnIcon />
           </IconButton>
         )}
         {router.location.pathname === '/' && (
-          <IconButton component={Link} to="/list">
+          <IconButton component={Link} to="/list" color="inherit">
             <TableChartIcon />
           </IconButton>
         )}
