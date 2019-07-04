@@ -29,9 +29,11 @@ export default function Navbar() {
     <AppBar className={classes.muiNavbar} position="fixed">
       <Toolbar>
         <img src="/favicon.png" alt="Logo" />
-        <Typography variant="h6" color="inherit">
-          All the Atoms
-        </Typography>
+        <Hidden xsDown>
+          <Typography variant="h6" color="inherit">
+            All the Atoms
+          </Typography>
+        </Hidden>
         <div className={classes.flexGrow} />
         {router.location.pathname === '/list' && (
           <IconButton component={Link} to="/" color="inherit">
