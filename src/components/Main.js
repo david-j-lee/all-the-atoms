@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import { HookedBrowserRouter } from './HookedBrowserRouter';
 import { useContext } from '../context';
 
 // material
@@ -12,7 +13,6 @@ import List from './List';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
-import { HookedBrowserRouter } from './HookedBrowserRouter';
 
 export default function Main() {
   const classes = useStyles();
