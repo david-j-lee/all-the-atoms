@@ -1,53 +1,54 @@
-import React from "react";
+import React from 'react';
+import { makeStyles } from '@material-ui/styles';
 
-import { withStyles } from "@material-ui/core";
+export default function Placeholder({ isActive, type }) {
+  const classes = useStyles();
+  let className, text;
 
-const styles = theme => ({
+  switch (type) {
+    case 'l':
+      className = 'lanthanoid';
+      text = '57-71';
+      break;
+    case 'a':
+      className = 'actinoid';
+      text = '89-103';
+      break;
+    default:
+      break;
+  }
+
+  return (
+    <div className={classes.root}>
+      <div
+        className={[
+          classes.body,
+          className + '-bg',
+          isActive ? classes.active : classes.inactive,
+        ].join(' ')}
+      >
+        <span>{text}</span>
+      </div>
+    </div>
+  );
+}
+
+const useStyles = makeStyles(theme => ({
   root: {
-    width: "calc(100% / 18 - 15px / 18)"
+    width: 'calc(100% / 18 - 15px / 18)',
   },
   active: {
-    opacity: 1
+    opacity: 1,
   },
   inactive: {
-    opacity: 0.25
+    opacity: 0.25,
   },
   body: {
     margin: 1,
     padding: 4,
-    height: "calc(100% - 2px)",
-    fontSize: "9pt",
-    lineHeight: 1.3
-  }
-});
-
-export class Placeholder extends React.Component {
-  render() {
-    const { classes, isActive } = this.props;
-    let type, text;
-
-    if (this.props.type === "l") {
-      type = "lanthanoid";
-      text = "57-71";
-    } else if (this.props.type === "a") {
-      type = "actinoid";
-      text = "89-103";
-    }
-
-    return (
-      <div className={classes.root}>
-        <div
-          className={[
-            classes.body,
-            type + "-bg",
-            isActive ? classes.active : classes.inactive
-          ].join(" ")}
-        >
-          <span>{text}</span>
-        </div>
-      </div>
-    );
-  }
-}
-
-export default withStyles(styles)(Placeholder);
+    height: 'calc(100% - 2px)',
+    fontSize: '9pt',
+    lineHeight: 1.3,
+    color: theme.palette.getContrastText(theme.palette.text.primary),
+  },
+}));

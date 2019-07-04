@@ -1,19 +1,14 @@
-import React from "react";
+import React from 'react';
+import { makeStyles } from '@material-ui/styles';
 
-import { withStyles } from "@material-ui/core";
+export default function Empty() {
+  const classes = useStyles();
 
-const styles = theme => ({
+  return <div className={classes.root} />;
+}
+
+const useStyles = makeStyles(theme => ({
   root: {
     width: 'calc(100% / 18 - 15px / 18)',
   },
-});
-
-export class Empty extends React.Component {
-  render() {
-    const { classes } = this.props;
-
-    return <div className={classes.root} />;
-  }
-}
-
-export default withStyles(styles)(Empty);
+}));

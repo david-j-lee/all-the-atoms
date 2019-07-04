@@ -1,8 +1,21 @@
-import React from "react";
+import React from 'react';
 
-import { withStyles, Typography } from "@material-ui/core";
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/styles';
 
-const styles = theme => ({
+export default function Group({ group }) {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.root}>
+      <Typography className={classes.text} variant="subtitle2">
+        {group.number}
+      </Typography>
+    </div>
+  );
+}
+
+const useStyles = makeStyles(theme => ({
   root: {
     width: 'calc(100% / 18 - 15px / 18)',
     display: 'flex',
@@ -10,22 +23,6 @@ const styles = theme => ({
   text: {
     alignSelf: 'flex-end',
     margin: '0 auto',
-    opacity: .5,
+    opacity: 0.5,
   },
-});
-
-export class Group extends React.Component {
-  render() {
-    const { classes } = this.props;
-
-    return (
-      <div className={classes.root}>
-        <Typography className={classes.text}>
-          {this.props.group.number}
-        </Typography>
-      </div>
-    );
-  }
-}
-
-export default withStyles(styles)(Group);
+}));

@@ -1,8 +1,25 @@
-import React from "react";
+import React from 'react';
 
-import { withStyles, Typography } from "@material-ui/core";
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/styles';
 
-const styles = theme => ({
+export default function Period({ period }) {
+  const classes = useStyles();
+
+  if (!period) {
+    return <div className={classes.root} />;
+  } else {
+    return (
+      <div className={classes.root}>
+        <Typography className={classes.text} variant="subtitle2">
+          {period.number}
+        </Typography>
+      </div>
+    );
+  }
+}
+
+const useStyles = makeStyles(theme => ({
   root: {
     width: 15,
     textAlign: 'center',
@@ -11,27 +28,7 @@ const styles = theme => ({
     justifyContent: 'flex-end',
   },
   text: {
-    opacity: .5,
+    opacity: 0.5,
     paddingRight: 5,
   },
-});
-
-export class Period extends React.Component {
-  render() {
-    const { classes } = this.props;
-
-    if (this.props.period == null) {
-      return <div className={classes.root} />;
-    } else {
-      return (
-        <div className={classes.root}>
-          <Typography className={classes.text}>
-            {this.props.period.number}
-          </Typography>
-        </div>
-      );
-    }
-  }
-}
-
-export default withStyles(styles)(Period);
+}));

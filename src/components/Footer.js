@@ -1,18 +1,40 @@
-import React from "react";
+import React from 'react';
 
-import Typography from "@material-ui/core/Typography";
+import Typography from '@material-ui/core/Typography';
 
 // fonts & icons
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // material
-import { withStyles } from "@material-ui/core";
+import { makeStyles } from '@material-ui/styles';
 
-const styles = theme => ({
+export default function Footer() {
+  const classes = useStyles();
+
+  return (
+    <footer className={classes.footer}>
+      <Typography className={classes.text}>
+        Made by{' '}
+        <a
+          className={classes.link}
+          href="http://devdavidlee.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          David Lee
+        </a>{' '}
+        for Michelle Kang{' '}
+        <FontAwesomeIcon icon="heart" size="xs" className={classes.heart} />
+      </Typography>
+    </footer>
+  );
+}
+
+const useStyles = makeStyles(theme => ({
   footer: {
     textAlign: 'center',
     padding: 5,
-    opacity: 0.5,
+    opacity: 0.1,
   },
   heart: {
     color: '#ff5b5b',
@@ -23,28 +45,4 @@ const styles = theme => ({
   text: {
     fontSize: '.7rem',
   },
-});
-
-export class Footer extends React.Component {
-  render() {
-    const { classes } = this.props;
-
-    return (
-      <footer className={classes.footer}>
-        <Typography className={classes.text}>
-          Made by{" "}
-          <a className={classes.link}
-            href="http://devdavidlee.com"
-            target="_blank"
-            rel="noopener noreferrer">
-            David Lee
-          </a>{" "}
-          for Michelle Kang{" "}
-          <FontAwesomeIcon icon="heart" size="xs" className={classes.heart} />
-        </Typography>
-      </footer>
-    );
-  }
-}
-
-export default withStyles(styles)(Footer);
+}));

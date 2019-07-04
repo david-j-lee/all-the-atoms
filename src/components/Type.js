@@ -1,14 +1,63 @@
-import React from "react";
-
-// redux
-import { connect } from "react-redux";
-import { searchElements } from "../actions/tableActions";
+import React, { useState, useEffect, useRef } from 'react';
+import { useContext } from './../context';
 
 // material
-import { withStyles } from '@material-ui/core';
-import Typography from "@material-ui/core/Typography";
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/styles';
 
-const styles = theme => ({
+export default function Type({ type }) {
+  const classes = useStyles();
+  const [{ search }, { searchElements }] = useContext();
+
+  const [isActive, setIsActive] = useState(false);
+  const searchTerm = useRef(`type: ${type['name-plural']}`);
+  const className = useRef(
+    type['name-plural'].replace(/\s+/g, '-').toLowerCase(),
+  );
+
+  useEffect(() => {
+    if (search.toLowerCase() !== searchTerm.current.toLowerCase()) {
+      setIsActive(false);
+    } else {
+      setIsActive(true);
+    }
+  }, [search]);
+
+  const searchByType = () => {
+    if (isActive) {
+      searchElements('');
+      setIsActive(false);
+    } else {
+      searchElements(searchTerm.current);
+      setIsActive(true);
+    }
+  };
+
+  return (
+    <button
+      onClick={searchByType}
+      className={[
+        classes.root,
+        'legend-item',
+        className.current + '-bg',
+        isActive ? 'active' : 'inactive',
+      ].join(' ')}
+    >
+      <div
+        className={[
+          'legend-item-content',
+          className.current + '-border-bottom',
+        ].join(' ')}
+      >
+        <Typography variant="body2" color="textPrimary">
+          {type['name-plural']}
+        </Typography>
+      </div>
+    </button>
+  );
+}
+
+const useStyles = makeStyles(theme => ({
   root: {
     margin: '0 5px 5px 5px',
     padding: '1px 3px',
@@ -18,69 +67,4 @@ const styles = theme => ({
   content: {
     padding: '0 3px',
   },
-});
-
-export class Type extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isActive: false
-    };
-
-    this.searchTerm = `type: ${this.props.type["name-plural"]}`;
-  }
-
-  componentWillMount() {
-    this.getStatus(this.props.search);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.getStatus(nextProps.search);
-  }
-
-  searchByType = () => {
-    if (this.state.isActive) {
-      this.props.searchElements("");
-      this.setState({ isActive: false });
-    } else {
-      this.props.searchElements(this.searchTerm);
-      this.setState({ isActive: true });
-    }
-  };
-
-  getStatus(search) {
-    if (search.toLowerCase() !== this.searchTerm.toLowerCase()) {
-      this.setState({ isActive: false });
-    } else {
-      this.setState({ isActive: true });
-    }
-  }
-
-  render() {
-    const { classes, type } = this.props;
-    const className = type["name-plural"].replace(/\s+/g, "-").toLowerCase();
-
-    return (
-      <button onClick={this.searchByType}
-        className={[classes.root, 'legend-item', className + "-bg", 
-          (this.state.isActive ? "active" : "inactive")].join(" ")}>
-        <div className={["legend-item-content", className + "-border-bottom"].join(" ")}>
-          <Typography>{type["name-plural"]}</Typography>
-        </div>
-      </button>
-    );
-  }
-}
-
-const mapStateToProps = state => {
-  return {
-    search: state.table.search
-  };
-};
-
-const mapDispatchToProps = {
-  searchElements
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Type));
+}));
