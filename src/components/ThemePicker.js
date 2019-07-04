@@ -170,7 +170,11 @@ export default function ThemePicker() {
       <IconButton onClick={() => setDialogOpen(true)} color="inherit">
         <PaletteIcon />
       </IconButton>
-      <Dialog open={dialogOpen} classes={{ paper: 'colors-dialog' }}>
+      <Dialog
+        open={dialogOpen}
+        onClose={handleClose}
+        classes={{ paper: 'colors-dialog' }}
+      >
         <DialogTitle>
           {!color1
             ? 'Select Primary Color Scheme'
