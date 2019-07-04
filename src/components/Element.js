@@ -128,11 +128,7 @@ export default function Element({ element }) {
         disableRestoreFocus
       >
         <div className={`${normalizedType}-bg`}>
-          <Typography
-            color="inherit"
-            variant="h6"
-            className={classes.popoverHeader}
-          >
+          <Typography variant="h6" className={classes.popoverHeader}>
             {element['atomic-name']}
           </Typography>
         </div>
@@ -238,7 +234,7 @@ const useStyles = makeStyles(theme => ({
   },
   popoverHeader: {
     padding: theme.spacing(1.5),
-    color: 'inherit',
+    color: 'black',
   },
   popoverContent: {
     padding: theme.spacing(1.5),
