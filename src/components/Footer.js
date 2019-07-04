@@ -13,7 +13,7 @@ export default function Footer() {
 
   return (
     <footer className={classes.footer}>
-      <Typography className={classes.text}>
+      <Typography component="p" className={classes.text}>
         Made by{' '}
         <a
           className={classes.link}
@@ -34,7 +34,10 @@ const useStyles = makeStyles(theme => ({
   footer: {
     textAlign: 'center',
     padding: 5,
-    opacity: 0.1,
+    opacity: 0.25,
+    '& p': {
+      fontSize: '0.65rem',
+    },
   },
   heart: {
     color: '#ff5b5b',
