@@ -12,6 +12,7 @@ import List from './List';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
+import { HookedBrowserRouter } from './HookedBrowserRouter';
 
 export default function Main() {
   const classes = useStyles();
@@ -20,7 +21,7 @@ export default function Main() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BrowserRouter>
+      <HookedBrowserRouter>
         <div className={classes.siteWrapper}>
           <Navbar />
           <div className={classes.main}>
@@ -32,7 +33,7 @@ export default function Main() {
           </div>
           <Sidebar />
         </div>
-      </BrowserRouter>
+      </HookedBrowserRouter>
     </ThemeProvider>
   );
 }

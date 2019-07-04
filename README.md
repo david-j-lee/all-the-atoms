@@ -2,9 +2,7 @@
 
 View live site here [alltheatoms.com](http://alltheatoms.com)
 
-The internet was in desperate need for a modern day Periodic Table of Elements on the web, so I decided to create one.
-
-This shows the elements in a table and a list. You can search elements and view elemental states based on a given temperature.
+A Periodic Table of Elements with a modern UI. Elements are shown in a table and a list. You can search elements and view elemental states based on a given temperature.
 
 ## Searching
 
@@ -18,7 +16,3 @@ The following prefixes can be used:
 * `atomic-number`
 * `symbol`
 * `type`
-
-## TODO
-
-* [ ] Add clear button next to text fields

@@ -4,7 +4,6 @@ import { useContext } from '../context';
 
 // material
 import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
@@ -12,9 +11,19 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Hidden from '@material-ui/core/Hidden';
 import { makeStyles } from '@material-ui/styles';
 
+import TableChartIcon from '@material-ui/icons/TableChart';
+import GridOnIcon from '@material-ui/icons/GridOn';
+
+// components
+import ThemePicker from './ThemePicker';
+import { useRouter } from './HookedBrowserRouter';
+
 export default function Navbar() {
   const classes = useStyles();
   const { toggleMenu } = useContext()[1];
+  const router = useRouter();
+
+  console.log(router);
 
   return (
     <AppBar className={classes.muiNavbar} position="fixed">
@@ -24,12 +33,17 @@ export default function Navbar() {
           All the Atoms
         </Typography>
         <div className={classes.flexGrow} />
-        <Button component={Link} to="/" color="inherit" size="small">
-          Table
-        </Button>
-        <Button component={Link} to="/list" color="inherit" size="small">
-          List
-        </Button>
+        {router.location.pathname === '/list' && (
+          <IconButton component={Link} to="/">
+            <GridOnIcon />
+          </IconButton>
+        )}
+        {router.location.pathname === '/' && (
+          <IconButton component={Link} to="/list">
+            <TableChartIcon />
+          </IconButton>
+        )}
+        <ThemePicker />
         <Hidden lgUp>
           <IconButton
             color="inherit"

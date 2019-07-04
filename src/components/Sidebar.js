@@ -7,11 +7,11 @@ import Hidden from '@material-ui/core/Hidden';
 import TextField from '@material-ui/core/TextField';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
-import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import IconButton from '@material-ui/core/IconButton';
 import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Divider from '@material-ui/core/Divider';
@@ -20,12 +20,10 @@ import { makeStyles } from '@material-ui/styles';
 
 // material icons
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import CloseIcon from '@material-ui/icons/Close';
 
 // font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-// components
-import ThemePicker from './ThemePicker';
 
 export default function Sidebar() {
   const classes = useStyles();
@@ -65,6 +63,11 @@ export default function Sidebar() {
       }
       searchElements(e.target.value);
     }
+  };
+
+  const handleClearSearch = () => {
+    setSearchLocal('');
+    searchElements('');
   };
 
   const handleTempChange = e => {
@@ -110,6 +113,15 @@ export default function Sidebar() {
               onChange={handleSearchChange}
               onKeyDown={handleSearchKeyDown}
               value={searchLocal}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton onClick={handleClearSearch} size="small">
+                      <CloseIcon />
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
             />
           </FormControl>
           <div className={classes.temp}>
@@ -178,20 +190,17 @@ export default function Sidebar() {
           </RadioGroup>
         </FormControl>
         <Divider />
-        <div className={classes.section}>
-          <ThemePicker />
-        </div>
       </div>
       <div className={classes.link}>
-        <Button
+        <IconButton
           color="secondary"
           size="small"
-          href="https://github.com/david-j-lee/thetable"
+          href="https://github.com/david-j-lee/all-the-atoms"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Github
-        </Button>
+          <FontAwesomeIcon icon={['fab', 'github']} size="lg" />
+        </IconButton>
       </div>
     </div>
   );
@@ -244,6 +253,9 @@ const useStyles = makeStyles(theme => ({
   link: {
     padding: '0.5rem 1rem',
     textAlign: 'center',
+    '& svg': {
+      margin: theme.spacing(1),
+    },
   },
   display: {
     flexWrap: 'nowrap',

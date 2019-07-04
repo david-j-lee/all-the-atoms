@@ -110,8 +110,8 @@ export default function Element({ element }) {
             <span className={classes.elementState}>{State}</span>
           </div>
           <div className={classes.symbol}>{element['symbol']}</div>
-          <Hidden mdDown className={[classes.atomicName].join(' ')}>
-            {element['atomic-name']}
+          <Hidden mdDown>
+            <div className={classes.atomicName}>{element['atomic-name']}</div>
           </Hidden>
           <div className={classes.displayValue}>{element['display-value']}</div>
         </div>
@@ -200,7 +200,6 @@ const useStyles = makeStyles(theme => ({
   info: {
     textAlign: 'center',
     whiteSpace: 'nowrap',
-    overflow: 'hidden',
     lineHeight: 1.3,
   },
   active: {
@@ -222,6 +221,8 @@ const useStyles = makeStyles(theme => ({
   },
   atomicName: {
     fontSize: '9pt',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
   },
   displayValue: {
     fontSize: '9pt',

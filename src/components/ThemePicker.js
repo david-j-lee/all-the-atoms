@@ -17,6 +17,7 @@ import BrightnessHigh from '@material-ui/icons/BrightnessHigh';
 
 // material icons
 import ChevronRight from '@material-ui/icons/ChevronRight';
+import PaletteIcon from '@material-ui/icons/Palette';
 
 // material colors
 import red from '@material-ui/core/colors/red';
@@ -91,14 +92,7 @@ export default function ThemePicker() {
     setTheme(newTheme);
   };
 
-  const handleCancel = () => {
-    setColor1(null);
-    setColor2(null);
-    setDialogOpen(false);
-  };
-
-  const handleOk = () => {
-    changeColors(color1, color2);
+  const handleClose = () => {
     setColor1(null);
     setColor2(null);
     setDialogOpen(false);
@@ -110,6 +104,12 @@ export default function ThemePicker() {
     } else if (!color2) {
       setColor2(color);
     }
+  };
+
+  const handleSetColors = () => {
+    changeColors(color1, color2);
+    setColor1(null);
+    setColor2(null);
   };
 
   const colorPreviews = (
@@ -165,23 +165,16 @@ export default function ThemePicker() {
 
   return (
     <div>
-      <IconButton onClick={changeType} color="primary">
-        {theme.palette.type === 'light' ? <Brightness2 /> : <BrightnessHigh />}
+      <IconButton onClick={() => setDialogOpen(true)}>
+        <PaletteIcon />
       </IconButton>
-      <Button
-        variant="outlined"
-        onClick={() => setDialogOpen(true)}
-        color="secondary"
-      >
-        Pick Colors
-      </Button>
       <Dialog
         disableBackdropClick
         disableEscapeKeyDown
         open={dialogOpen}
         classes={{ paper: 'colors-dialog' }}
       >
-        <DialogTitle id="simple-dialog-title">
+        <DialogTitle>
           {!color1
             ? 'Select Primary Color Scheme'
             : 'Select Secondary Color Scheme'}
@@ -191,18 +184,36 @@ export default function ThemePicker() {
             {colorPreviews}
             {selectedColors}
           </div>
+          <div className={classes.setColorsButton}>
+            <Button
+              onClick={handleSetColors}
+              color="primary"
+              variant="contained"
+              disabled={!color1 || !color2}
+            >
+              Set Colors
+            </Button>
+          </div>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleCancel} color="secondary">
-            Cancel
-          </Button>
-          <Button
-            disabled={!color1 || !color2}
-            variant="contained"
-            onClick={handleOk}
-            color="primary"
-          >
-            Ok
+          {theme.palette.type === 'light' ? (
+            <Button onClick={changeType} color="secondary" variant="contained">
+              <Brightness2
+                className={[classes.leftIcon, classes.iconSmall].join(' ')}
+              />
+              Dark Theme
+            </Button>
+          ) : (
+            <Button onClick={changeType} color="secondary" variant="contained">
+              <BrightnessHigh
+                className={[classes.leftIcon, classes.iconSmall].join(' ')}
+              />
+              Light Theme
+            </Button>
+          )}
+          <div className={classes.grow} />
+          <Button onClick={handleClose} color="primary" variant="contained">
+            Close
           </Button>
         </DialogActions>
       </Dialog>
@@ -257,5 +268,18 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  setColorsButton: {
+    textAlign: 'center',
+    margin: theme.spacing(2, 0),
+  },
+  grow: {
+    flexGrow: 1,
+  },
+  leftIcon: {
+    marginRight: theme.spacing(1),
+  },
+  iconSmall: {
+    fontSize: 20,
   },
 }));
