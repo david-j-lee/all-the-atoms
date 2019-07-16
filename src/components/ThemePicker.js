@@ -199,17 +199,17 @@ export default function ThemePicker() {
         <DialogActions>
           {theme.palette.type === 'light' ? (
             <Button onClick={changeType} color="secondary" variant="contained">
-              <Brightness2
-                className={[classes.leftIcon, classes.iconSmall].join(' ')}
-              />
-              Dark Theme
-            </Button>
-          ) : (
-            <Button onClick={changeType} color="secondary" variant="contained">
               <BrightnessHigh
                 className={[classes.leftIcon, classes.iconSmall].join(' ')}
               />
               Light Theme
+            </Button>
+          ) : (
+            <Button onClick={changeType} color="secondary" variant="contained">
+              <Brightness2
+                className={[classes.leftIcon, classes.iconSmall].join(' ')}
+              />
+              Dark Theme
             </Button>
           )}
           <div className={classes.grow} />
