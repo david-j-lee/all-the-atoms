@@ -62,7 +62,7 @@ export default function Element({ element }) {
   if (element['melting-point'] || element['boiling-point']) {
     Points = (
       <Grid container className={classes.points}>
-        <Grid item md={6}>
+        <Grid item xs={6}>
           <FontAwesomeIcon
             icon="tint"
             size="xs"
@@ -72,7 +72,7 @@ export default function Element({ element }) {
             <Typography>{element['melting-point-converted']}</Typography>
           </span>
         </Grid>
-        <Grid item md={6}>
+        <Grid item xs={6}>
           <FontAwesomeIcon
             icon="cloud"
             size="xs"
@@ -116,7 +116,6 @@ export default function Element({ element }) {
           <div className={classes.displayValue}>{element['display-value']}</div>
         </div>
       </div>
-
       <Popover
         className={classes.popover}
         classes={{ paper: classes.paper }}
