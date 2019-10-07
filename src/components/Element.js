@@ -116,7 +116,6 @@ export default function Element({ element }) {
           <div className={classes.displayValue}>{element['display-value']}</div>
         </div>
       </div>
-
       <Popover
         className={classes.popover}
         classes={{ paper: classes.paper }}
