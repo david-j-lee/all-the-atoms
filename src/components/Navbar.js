@@ -23,8 +23,6 @@ export default function Navbar() {
   const { toggleMenu } = useContext()[1];
   const router = useRouter();
 
-  console.log(router);
-
   return (
     <AppBar className={classes.muiNavbar} position="fixed">
       <Toolbar>
