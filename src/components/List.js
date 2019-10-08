@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useContext } from '../context';
 
 // material
@@ -18,6 +18,7 @@ export default function List() {
   const [displayedElements, setDisplayedElements] = useState(elements);
   const [order, setOrder] = useState('asc');
   const [orderBy, setOrderBy] = useState('atomic-number');
+  const [tableHeaders, setTableHeaders] = useState([]);
 
   const handleRequestSort = newOrderBy => {
     setOrderBy(newOrderBy);
@@ -35,8 +36,8 @@ export default function List() {
     );
   };
 
-  const getTableHeaders = () => {
-    const tableHeaders = [
+  useEffect(() => {
+    setTableHeaders([
       { id: 'atomic-number', label: '#', numeric: true },
       { id: 'symbol', label: 'Symbol', numeric: false },
       { id: 'atomic-name', label: 'Name', numeric: false },
@@ -49,36 +50,33 @@ export default function List() {
       { id: 'melting-point', label: 'Melt (K)', numeric: true },
       { id: 'boiling-point', label: 'Boil (K)', numeric: true },
       { id: 'state', label: 'State', numeric: false },
-    ];
-    return (
-      <TableHead>
-        <TableRow>
-          {tableHeaders.map(header => {
-            return (
-              <TableCell
-                key={header.id}
-                align={header.numeric ? 'right' : 'left'}
-              >
-                <TableSortLabel
-                  active={orderBy === header.id}
-                  direction={order}
-                  onClick={() => handleRequestSort(header.id)}
-                >
-                  {header.label}
-                </TableSortLabel>
-              </TableCell>
-            );
-          })}
-        </TableRow>
-      </TableHead>
-    );
-  };
+    ]);
+  }, [displayValueText]);
 
   return (
     <div>
       <Paper>
         <Table className={classes.table}>
-          {getTableHeaders()}
+          <TableHead>
+            <TableRow>
+              {tableHeaders.map(header => {
+                return (
+                  <TableCell
+                    key={header.id}
+                    align={header.numeric ? 'right' : 'left'}
+                  >
+                    <TableSortLabel
+                      active={orderBy === header.id}
+                      direction={order}
+                      onClick={() => handleRequestSort(header.id)}
+                    >
+                      {header.label}
+                    </TableSortLabel>
+                  </TableCell>
+                );
+              })}
+            </TableRow>
+          </TableHead>
           <TableBody>
             {displayedElements
               .filter(element => element.isActive)

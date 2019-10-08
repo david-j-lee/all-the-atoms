@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useContext } from '../context';
 
 // material
@@ -17,6 +17,7 @@ export default function Element({ element }) {
 
   const [popoverOpen, setPopoverOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [icon, setIcon] = useState(null);
 
   const normalizedType = element['type'].replace(/\s+/g, '-').toLowerCase();
   const elementClassName = `${normalizedType}-bg group-${
@@ -37,56 +38,27 @@ export default function Element({ element }) {
     setPopoverOpen(!popoverOpen);
   };
 
-  // show element state if it exists
-  // the state is set when a temperature is set
-  let State = '';
-  if (element.state !== undefined) {
-    let icon = '';
-    switch (element.state) {
-      case 'solid':
-        icon = 'circle';
-        break;
-      case 'liquid':
-        icon = 'tint';
-        break;
-      case 'gas':
-        icon = 'cloud';
-        break;
-      default:
-        break;
+  useEffect(() => {
+    if (element.state) {
+      let newIcon = '';
+      switch (element.state) {
+        case 'solid':
+          newIcon = 'circle';
+          break;
+        case 'liquid':
+          newIcon = 'tint';
+          break;
+        case 'gas':
+          newIcon = 'cloud';
+          break;
+        default:
+          break;
+      }
+      setIcon(newIcon);
+    } else {
+      setIcon(null);
     }
-    State = <FontAwesomeIcon icon={icon} size="xs" />;
-  }
-
-  let Points = '';
-  if (element['melting-point'] || element['boiling-point']) {
-    Points = (
-      <Grid container className={classes.points}>
-        <Grid item xs={6}>
-          <FontAwesomeIcon
-            icon="tint"
-            size="xs"
-            className={`${normalizedType}-text`}
-          />{' '}
-          <span className="">
-            <Typography>{element['melting-point-converted']}</Typography>
-          </span>
-        </Grid>
-        <Grid item xs={6}>
-          <FontAwesomeIcon
-            icon="cloud"
-            size="xs"
-            className={`${normalizedType}-text`}
-          />{' '}
-          <span className="">
-            <Typography color="textPrimary">
-              {element['boiling-point-converted']}
-            </Typography>
-          </span>
-        </Grid>
-      </Grid>
-    );
-  }
+  }, [element]);
 
   return (
     <button
@@ -107,7 +79,11 @@ export default function Element({ element }) {
         <div className={classes.info}>
           <div className={classes.atomicNumber}>
             <span>{element['atomic-number']}</span>
-            <span className={classes.elementState}>{State}</span>
+            {icon && (
+              <span className={classes.elementState}>
+                <FontAwesomeIcon icon={icon} size="xs" />
+              </span>
+            )}
           </div>
           <div className={classes.symbol}>{element['symbol']}</div>
           <Hidden mdDown>
@@ -168,7 +144,32 @@ export default function Element({ element }) {
               </tr>
             </tbody>
           </table>
-          {Points}
+          {(element['melting-point'] || element['boiling-point']) && (
+            <Grid container className={classes.points}>
+              <Grid item xs={6}>
+                <FontAwesomeIcon
+                  icon="tint"
+                  size="xs"
+                  className={`${normalizedType}-text`}
+                />{' '}
+                <span className="">
+                  <Typography>{element['melting-point-converted']}</Typography>
+                </span>
+              </Grid>
+              <Grid item xs={6}>
+                <FontAwesomeIcon
+                  icon="cloud"
+                  size="xs"
+                  className={`${normalizedType}-text`}
+                />{' '}
+                <span className="">
+                  <Typography color="textPrimary">
+                    {element['boiling-point-converted']}
+                  </Typography>
+                </span>
+              </Grid>
+            </Grid>
+          )}
         </div>
       </Popover>
     </button>

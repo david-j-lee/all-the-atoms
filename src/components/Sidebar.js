@@ -91,6 +91,11 @@ export default function Sidebar() {
     }
   };
 
+  const handleClearTemperature = () => {
+    setTemperatureLocal('');
+    setElementalState(null);
+  };
+
   useEffect(() => {
     setSearchLocal(search);
   }, [search]);
@@ -114,13 +119,13 @@ export default function Sidebar() {
               onKeyDown={handleSearchKeyDown}
               value={searchLocal}
               InputProps={{
-                endAdornment: (
+                endAdornment: searchLocal ? (
                   <InputAdornment position="end">
                     <IconButton onClick={handleClearSearch} size="small">
                       <CloseIcon />
                     </IconButton>
                   </InputAdornment>
-                ),
+                ) : null,
               }}
             />
           </FormControl>
@@ -131,6 +136,15 @@ export default function Sidebar() {
                 onChange={handleTempChange}
                 onKeyDown={handleTempKeyDown}
                 value={temperatureLocal}
+                InputProps={{
+                  endAdornment: temperatureLocal ? (
+                    <InputAdornment position="end">
+                      <IconButton onClick={handleClearTemperature} size="small">
+                        <CloseIcon />
+                      </IconButton>
+                    </InputAdornment>
+                  ) : null,
+                }}
               />
             </FormControl>
             <FormControl className={classes.tempUnit}>

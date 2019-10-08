@@ -1,22 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/styles';
 
 export default function Placeholder({ isActive, type }) {
   const classes = useStyles();
-  let className, text;
 
-  switch (type) {
-    case 'l':
-      className = 'lanthanoid';
-      text = '57-71';
-      break;
-    case 'a':
-      className = 'actinoid';
-      text = '89-103';
-      break;
-    default:
-      break;
-  }
+  const [className, setClassName] = useState('');
+  const [text, setText] = useState('');
+
+  useEffect(() => {
+    switch (type) {
+      case 'l':
+        setClassName('lanthanoid');
+        setText('57-71');
+        break;
+      case 'a':
+        setClassName('actinoid');
+        setText('89-103');
+        break;
+      default:
+        break;
+    }
+  }, [type]);
 
   return (
     <div className={classes.root}>

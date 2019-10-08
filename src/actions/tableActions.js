@@ -196,7 +196,7 @@ function setElementalStates(elements, temp, unit) {
       break;
   }
   elements.forEach((element, i) => {
-    if (temp === undefined || temp === '') {
+    if (temp === null || temp === undefined || temp === '') {
       element.state = undefined;
     } else {
       if (element['melting-point'] || element['boiling-point']) {
@@ -290,7 +290,7 @@ function getElectronConfiguration(value) {
 
 function convertCelsiusToKelvin(celsius) {
   if (celsius === '' || !parseFloat(celsius)) {
-    return '';
+    return null;
   } else {
     return parseFloat(celsius) + 273.15;
   }
@@ -298,7 +298,7 @@ function convertCelsiusToKelvin(celsius) {
 
 function convertFahrenheitToKelvin(fahrenheit) {
   if (fahrenheit === '' || !parseFloat(fahrenheit)) {
-    return '';
+    return null;
   } else {
     return (((parseFloat(fahrenheit) + 459.67) * 5.0) / 9.0).toFixed(2);
   }

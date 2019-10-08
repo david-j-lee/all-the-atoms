@@ -15,14 +15,6 @@ export default function Type({ type }) {
     type['name-plural'].replace(/\s+/g, '-').toLowerCase(),
   );
 
-  useEffect(() => {
-    if (search.toLowerCase() !== searchTerm.current.toLowerCase()) {
-      setIsActive(false);
-    } else {
-      setIsActive(true);
-    }
-  }, [search]);
-
   const searchByType = () => {
     if (isActive) {
       searchElements('');
@@ -32,6 +24,14 @@ export default function Type({ type }) {
       setIsActive(true);
     }
   };
+
+  useEffect(() => {
+    if (search.toLowerCase() !== searchTerm.current.toLowerCase()) {
+      setIsActive(false);
+    } else {
+      setIsActive(true);
+    }
+  }, [search]);
 
   return (
     <button
