@@ -4,6 +4,10 @@ View live site here [alltheatoms.com](http://alltheatoms.com)
 
 A Periodic Table of Elements with a modern UI. Elements are shown in a table and a list. You can search elements and view elemental states based on a given temperature.
 
+## Requirements
+
+use Node v11+
+
 ## Searching
 
 You can search by a keyword or you can prefix with a property to refine your search.
