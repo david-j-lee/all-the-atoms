@@ -1,8 +1,7 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useContext } from '../context';
 
 // material
-import { Theme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import IconButton from '@material-ui/core/IconButton';
@@ -13,9 +12,6 @@ import Dialog from '@material-ui/core/Dialog';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/styles';
-
-import Brightness2 from '@material-ui/icons/Brightness2';
-import BrightnessHigh from '@material-ui/icons/BrightnessHigh';
 
 // material icons
 import Check from '@material-ui/icons/Check';

@@ -7,7 +7,7 @@ import typeData from '../data/types.json';
 import indigo from '@material-ui/core/colors/indigo';
 import pink from '@material-ui/core/colors/pink';
 import red from '@material-ui/core/colors/red';
-import { createMuiTheme } from '@material-ui/core';
+import { createTheme } from '@material-ui/core/styles';
 
 export const tableActions = {
   toggleMenu() {
@@ -45,7 +45,7 @@ export const tableActions = {
       localStorage.setItem('theme', JSON.stringify(theme));
       return {
         ...state,
-        theme: createMuiTheme({ ...theme }),
+        theme: createTheme({ ...theme }),
       };
     };
   },
@@ -105,7 +105,7 @@ export const getTheme = () => {
     };
     localStorage.setItem('theme', JSON.stringify(theme));
   }
-  return createMuiTheme(theme);
+  return createTheme(theme);
 };
 
 function setupElements(elements, displayValue, unit) {
